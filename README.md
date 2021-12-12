@@ -22,12 +22,12 @@
 # User profile:
 
 - see my profile
-_ see exit point
-_ Add favarite subject
-_ disple/ enable nafication
+-  see exit point
+-  Add favarite subject
+- disple/ enable navigation
 
 **************************************************************************************************************
-# Page:
+# Pages:
 
 - LoginPage
 - SignupPage
