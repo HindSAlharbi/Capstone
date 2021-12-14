@@ -8,25 +8,19 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseStorage
 
 class SignUpPageViewController: UIViewController {
-
+    
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
-    
     @IBOutlet weak var emailTextFiled: UITextField!
-    
-    
     @IBOutlet weak var passwordTextFiled: UITextField!
-    
     @IBOutlet weak var wrongTextField: UILabel!
-    
-    let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         textlabel0()
         textlabel()
         
@@ -42,29 +36,39 @@ class SignUpPageViewController: UIViewController {
         performSegue(withIdentifier: Constants.login, sender: nil)
     }
     
-    @IBAction func homeBtn(_ sender: Any) {
-        if let email = emailTextFiled.text ,  let password = passwordTextFiled.text {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let er = error {
-            
-               print(er)// alret
-            }else {
-                self.performSegue(withIdentifier:Constants.mainPage, sender: self)
-            }
-        }
-        }
-    }
-    
-        
     @IBAction func skipBtnAction(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: Constants.skipToMaine, sender: nil)
     }
-    func checkUserInfor(){
-        if Auth.auth().currentUser != nil{
-            print(Auth.auth().currentUser?.uid)
-        }
+    
+    func signUP(){
+        if let email = emailTextFiled.text ,  let password = passwordTextFiled.text {
+                Auth.auth().createUser(withEmail: email, password: password)  { authResult, error in
+                    guard let user = authResult?.user, error == nil else {
+                    print("email:\(String(describing: authResult?.user.email))")
+                    print("uid:\(String(describing: authResult?.user.uid))")
+                        return
+                        
+                    }
+                    UserApi.addUser(name: "", uid: authResult?.user.uid ?? "", email: self.emailTextFiled.text ?? "", completion:  { check in
+                        if check {
+                            print("Done saving in Database")
+                        } else {
+                        self.performSegue(withIdentifier: Constants.mainPage, sender: self)
+       }
+     })
     }
+  }
 }
+    
+    @IBAction func homeBtn(_ sender: Any) {
+    signUP()
+        
+    }
+
+    }
+
+
+
 extension SignUpPageViewController{
     
     func textlabel0(){
@@ -94,3 +98,8 @@ extension SignUpPageViewController{
     }
     
 }
+
+
+//        UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
+//            print(user.name ?? "")
+//               }
