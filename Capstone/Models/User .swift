@@ -10,9 +10,9 @@ import UIKit
 
 class User {
     
-    var name:String?
     var email: String?
-
+    var firstName: String?
+    var lastName: String?
 }
 extension User {
     
@@ -21,18 +21,27 @@ extension User {
         let user = User()
         
        
-        user.name = dict["name"] as? String
         user.email = dict["email"] as? String
+        user.firstName = dict["firstName"] as? String
+        user.lastName = dict["lastName"] as? String
        
         return user
     }
-    static func CreateUser(name:String,email:String) -> [String: Any] {
+    static func CreateUser(email:String,firstName: String, lastName: String ) -> [String: Any] {
        
         let newUser = [
-                       "name":name,
-                       "email" :email
+                       "email" :email, "firstName": firstName, "lastName": lastName
                     ] as [String : Any]
         
         return newUser
+    }
+    static func update(firstName: String,lastName: String) -> [String: Any] {
+    
+        
+            let newUser = ["firstName": firstName, "lastName": lastName] as [String : Any]
+            
+            return newUser
+        
+        
     }
 }

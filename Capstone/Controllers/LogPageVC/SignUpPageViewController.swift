@@ -16,11 +16,12 @@ class SignUpPageViewController: UIViewController {
     @IBOutlet weak var emailTextFiled: UITextField!
     @IBOutlet weak var passwordTextFiled: UITextField!
     @IBOutlet weak var wrongTextField: UILabel!
-
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         textlabel0()
         textlabel()
         
@@ -49,11 +50,12 @@ class SignUpPageViewController: UIViewController {
                         return
                         
                     }
-                    UserApi.addUser(name: "", uid: authResult?.user.uid ?? "", email: self.emailTextFiled.text ?? "", completion:  { check in
+                    
+                    UserApi.addUser(uid: authResult?.user.uid ?? "", email: self.emailTextFiled.text ?? "", firstName: self.firstNameTextField.text ?? "", lastName: self.lastNameTextField.text ?? "", completion:  { check in
                         if check {
                             print("Done saving in Database")
+                            self.performSegue(withIdentifier: Constants.mainPage, sender: nil)
                         } else {
-                        self.performSegue(withIdentifier: Constants.mainPage, sender: self)
        }
      })
     }
@@ -103,3 +105,5 @@ extension SignUpPageViewController{
 //        UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
 //            print(user.name ?? "")
 //               }
+
+//name: self.firstNameTextField.text ?? "",

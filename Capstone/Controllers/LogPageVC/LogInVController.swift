@@ -17,10 +17,15 @@ class LogInVController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         labeltext3()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: Constants.loginHome, sender: self)
+        }
+    }
 
     
     @IBAction func LogInToHome(_ sender: Any) {
