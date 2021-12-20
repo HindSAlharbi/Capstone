@@ -13,6 +13,7 @@ class User {
     var email: String?
     var firstName: String?
     var lastName: String?
+    var proImage: UIImage?
 }
 extension User {
     
@@ -24,13 +25,14 @@ extension User {
         user.email = dict["email"] as? String
         user.firstName = dict["firstName"] as? String
         user.lastName = dict["lastName"] as? String
+        user.proImage = dict["Image"] as? UIImage
        
         return user
     }
-    static func CreateUser(email:String,firstName: String, lastName: String ) -> [String: Any] {
+    static func CreateUser(email:String,firstName: String, lastName: String) -> [String: Any] {
        
         let newUser = [
-                       "email" :email, "firstName": firstName, "lastName": lastName
+            "email" :email, "firstName": firstName, "lastName": lastName
                     ] as [String : Any]
         
         return newUser
@@ -38,7 +40,7 @@ extension User {
     static func update(firstName: String,lastName: String) -> [String: Any] {
     
         
-            let newUser = ["firstName": firstName, "lastName": lastName] as [String : Any]
+        let newUser = ["firstName": firstName, "lastName": lastName] as [String : Any]
             
             return newUser
         

@@ -26,8 +26,8 @@ class SignUpPageViewController: UIViewController {
         textlabel()
         
     }
-
-
+    
+    
     @IBAction func registerBtn(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.register, sender: nil)
     }
@@ -43,32 +43,31 @@ class SignUpPageViewController: UIViewController {
     
     func signUP(){
         if let email = emailTextFiled.text ,  let password = passwordTextFiled.text {
-                Auth.auth().createUser(withEmail: email, password: password)  { authResult, error in
-                    guard let user = authResult?.user, error == nil else {
+            Auth.auth().createUser(withEmail: email, password: password)  { authResult, error in
+                guard let user = authResult?.user, error == nil else {
                     print("email:\(String(describing: authResult?.user.email))")
                     print("uid:\(String(describing: authResult?.user.uid))")
-                        return
-                        
+                    return
+                }
+                
+                
+                UserApi.addUser(uid: authResult?.user.uid ?? "", email: self.emailTextFiled.text ?? "", firstName: self.firstNameTextField.text ?? "", lastName: self.lastNameTextField.text ?? "",completion:  { check in
+                    if check {
+                        print("Done saving in Database")
+                        self.performSegue(withIdentifier: Constants.mainPage, sender: nil)
+                    } else {
                     }
-                    
-                    UserApi.addUser(uid: authResult?.user.uid ?? "", email: self.emailTextFiled.text ?? "", firstName: self.firstNameTextField.text ?? "", lastName: self.lastNameTextField.text ?? "", completion:  { check in
-                        if check {
-                            print("Done saving in Database")
-                            self.performSegue(withIdentifier: Constants.mainPage, sender: nil)
-                        } else {
-       }
-     })
+                })
+            }
+        }
     }
-  }
-}
     
     @IBAction func homeBtn(_ sender: Any) {
-    signUP()
+        signUP()
         
     }
-
-    }
-
+    
+}
 
 
 extension SignUpPageViewController{
@@ -81,12 +80,12 @@ extension SignUpPageViewController{
             Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer )in
                 self.titleLable?.text?.append(letter)
             }
-           charIndex += 1
+            charIndex += 1
         }
         
         
     }
-
+    
     func textlabel(){
         
         var charIndex1 = 0.0
@@ -95,15 +94,11 @@ extension SignUpPageViewController{
             Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex1, repeats: false) { (timer )in
                 self.wrongTextField?.text?.append(letter)
             }
-           charIndex1 += 1
+            charIndex1 += 1
         }
     }
     
 }
 
 
-//        UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
-//            print(user.name ?? "")
-//               }
 
-//name: self.firstNameTextField.text ?? "",
