@@ -14,6 +14,8 @@ class User {
     var firstName: String?
     var lastName: String?
     var proImage: UIImage?
+    var body: String?
+    var sender: String?
 }
 extension User {
     
@@ -46,4 +48,13 @@ extension User {
         
         
     }
+    static func sendUserReview(body:String) -> [String: Any] {
+    
+        
+        let newMessage = ["body": body] as [String : Any]
+            
+            return newMessage
+
+}
+    
 }

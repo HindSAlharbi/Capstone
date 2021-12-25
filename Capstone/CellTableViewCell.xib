@@ -9,49 +9,49 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="42" id="KGk-i7-Jjw" customClass="CellTableViewCell" customModule="Capstone" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="377" height="171"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="20" id="KGk-i7-Jjw" customClass="CellTableViewCell" customModule="Capstone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="149"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="377" height="171"/>
+                <rect key="frame" x="0.0" y="0.0" width="348.5" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8U7-Sw-jrS">
-                        <rect key="frame" x="5" y="5" width="370" height="159"/>
+                        <rect key="frame" x="12" y="0.0" width="344" height="138"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-09-fNa">
-                                <rect key="frame" x="0.0" y="0.0" width="168" height="161"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="161" id="7Iz-hk-UoM"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkZ-K9-fEQ">
-                                <rect key="frame" x="176" y="61" width="191" height="59"/>
+                                <rect key="frame" x="176" y="61" width="162.5" height="37"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-09-fNa">
+                                <rect key="frame" x="0.0" y="12" width="168" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="7Iz-hk-UoM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="tkZ-K9-fEQ" firstAttribute="leading" secondItem="caJ-09-fNa" secondAttribute="trailing" constant="8" id="B5M-Z8-XwY"/>
-                            <constraint firstItem="caJ-09-fNa" firstAttribute="top" secondItem="8U7-Sw-jrS" secondAttribute="top" id="Z5c-jT-yLO"/>
+                            <constraint firstItem="caJ-09-fNa" firstAttribute="top" secondItem="8U7-Sw-jrS" secondAttribute="top" constant="12" id="Z5c-jT-yLO"/>
                             <constraint firstItem="tkZ-K9-fEQ" firstAttribute="top" secondItem="8U7-Sw-jrS" secondAttribute="top" constant="61" id="a72-3M-YCn"/>
-                            <constraint firstAttribute="trailing" secondItem="tkZ-K9-fEQ" secondAttribute="trailing" constant="3" id="bFH-7V-uRz"/>
+                            <constraint firstAttribute="trailing" secondItem="tkZ-K9-fEQ" secondAttribute="trailing" constant="5.5" id="bFH-7V-uRz"/>
                             <constraint firstItem="tkZ-K9-fEQ" firstAttribute="leading" secondItem="8U7-Sw-jrS" secondAttribute="leading" constant="176" id="lIN-gz-LEM"/>
                             <constraint firstItem="caJ-09-fNa" firstAttribute="leading" secondItem="8U7-Sw-jrS" secondAttribute="leading" id="xJh-B8-G1G"/>
-                            <constraint firstAttribute="bottom" secondItem="tkZ-K9-fEQ" secondAttribute="bottom" constant="39" id="zbC-6H-SlZ"/>
+                            <constraint firstAttribute="bottom" secondItem="tkZ-K9-fEQ" secondAttribute="bottom" constant="40" id="zbC-6H-SlZ"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="8yv-Zv-Hm7"/>
-                    <constraint firstAttribute="trailing" secondItem="8U7-Sw-jrS" secondAttribute="trailing" constant="2" id="9dI-qm-7oA"/>
-                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="DVg-Qp-lal"/>
-                    <constraint firstAttribute="bottom" secondItem="8U7-Sw-jrS" secondAttribute="bottom" constant="7" id="RN7-jh-7Nv"/>
-                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Sra-66-aH9"/>
-                    <constraint firstAttribute="trailing" secondItem="8U7-Sw-jrS" secondAttribute="trailing" constant="2" id="Vr6-te-ety"/>
-                    <constraint firstAttribute="bottom" secondItem="8U7-Sw-jrS" secondAttribute="bottom" constant="7" id="gU1-vn-R1f"/>
-                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="wXc-0Y-SRX"/>
+                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="8yv-Zv-Hm7"/>
+                    <constraint firstAttribute="trailing" secondItem="8U7-Sw-jrS" secondAttribute="trailing" constant="-7.5" id="9dI-qm-7oA"/>
+                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="DVg-Qp-lal"/>
+                    <constraint firstAttribute="bottom" secondItem="8U7-Sw-jrS" secondAttribute="bottom" constant="11" id="RN7-jh-7Nv"/>
+                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Sra-66-aH9"/>
+                    <constraint firstAttribute="trailing" secondItem="8U7-Sw-jrS" secondAttribute="trailing" constant="-7.5" id="Vr6-te-ety"/>
+                    <constraint firstAttribute="bottom" secondItem="8U7-Sw-jrS" secondAttribute="bottom" constant="11" id="gU1-vn-R1f"/>
+                    <constraint firstItem="8U7-Sw-jrS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wXc-0Y-SRX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -59,7 +59,7 @@
                 <outlet property="imageTable" destination="caJ-09-fNa" id="bLZ-c1-rg2"/>
                 <outlet property="titlelable" destination="tkZ-K9-fEQ" id="FPw-hO-FCs"/>
             </connections>
-            <point key="canvasLocation" x="147.10144927536234" y="86.71875"/>
+            <point key="canvasLocation" x="152.17391304347828" y="80.022321428571431"/>
         </tableViewCell>
     </objects>
     <resources>

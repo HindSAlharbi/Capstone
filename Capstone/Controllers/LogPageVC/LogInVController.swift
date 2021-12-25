@@ -32,7 +32,7 @@ class LogInVController: UIViewController {
                 guard let strongSelf = self else { return }
                 if let e  = error{
                     let alert = UIAlertController(title: "Error", message: "Pleas fill all the filed.", preferredStyle: .alert)
-
+                    
                     alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
                     
                     self?.present(alert, animated: true)

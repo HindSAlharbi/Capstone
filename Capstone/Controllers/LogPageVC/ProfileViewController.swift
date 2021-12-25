@@ -26,13 +26,10 @@ class ProfileViewController: UIViewController{
     var user: User?
     var imagePicker:UIImagePickerController!
     
-
-        
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    //present(imagePicker, animated: true, completion: nil)
-
+        //present(imagePicker, animated: true, completion: nil)
+        
         UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
             self.user = user
             self.emailtextfiled.text = user.email
@@ -44,24 +41,18 @@ class ProfileViewController: UIViewController{
         if Auth.auth().currentUser?.uid == nil {
         }else{
         }
-//        let tapGestuew = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.handleSelectProfileImageView))
-//        profileImage.addGestureRecognizer(tapGestuew)
-//        profileImage.isUserInteractionEnabled = true
-//        let imageTTap = UITapGestureRecognizer(target: self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
-
-      imagePicker = UIImagePickerController()
+        imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
     }
     
-    
     func update() {
         guard let user = user else { return  }
         
         UserApi.updateUserInfo(currentUser: user, uid: Auth.auth().currentUser?.uid ?? "", firstName: firstNameProfile.text ?? "", lastName: lastNameProfile.text ?? "")
-    
+        
     }
     
     @IBAction func uploadImage(_ sender: Any) {
@@ -87,24 +78,23 @@ class ProfileViewController: UIViewController{
     func checkPermission(){
         if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
             PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) -> Void in
-    ()
-        })
-        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
-        } else {
-            PHPhotoLibrary.requestAuthorization(requestAuthorizationHandler)
+                ()
+            })
+            if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            } else {
+                PHPhotoLibrary.requestAuthorization(requestAuthorizationHandler)
+            }
         }
-    }
-
-
-    func requestAuthorizationHandler(status:PHAuthorizationStatus){
         
-        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
-            print("we have access to photo")
-        }else {
-            print("we do not have access to photo")
+        func requestAuthorizationHandler(status:PHAuthorizationStatus){
+            
+            if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
+                print("we have access to photo")
+            }else {
+                print("we do not have access to photo")
+            }
         }
     }
-}
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL{
             print(url)
@@ -114,7 +104,7 @@ class ProfileViewController: UIViewController{
     }
     func uploadToCloud(fileURL: URL){
         let storage = Storage.storage()
-      let data = Data()
+        let data = Data()
         let storageRef = storage.reference()
         let localFile = fileURL
         let photoRef = storageRef.child("uploadPhotoOne")
@@ -123,13 +113,13 @@ class ProfileViewController: UIViewController{
                 print(err)
                 return
             }
-           print("photo Upload")
+            print("photo Upload")
         }
     }
     
 }
 extension ProfileViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-     
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
@@ -165,3 +155,7 @@ extension ProfileViewController:UIImagePickerControllerDelegate, UINavigationCon
 //
 //    }
 //
+//        let tapGestuew = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.handleSelectProfileImageView))
+//        profileImage.addGestureRecognizer(tapGestuew)
+//        profileImage.isUserInteractionEnabled = true
+//        let imageTTap = UITapGestureRecognizer(target: self, action: #selector(<#T##@objc method#>), for: .touchUpInside)

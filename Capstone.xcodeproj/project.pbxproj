@@ -15,6 +15,7 @@
 		752A771D2769E2BD00F9B500 /* MainSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A771C2769E2BD00F9B500 /* MainSubjectViewController.swift */; };
 		75536B5927709FDD006358B7 /* MessageApI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75536B5827709FDD006358B7 /* MessageApI.swift */; };
 		75536B5B2770A06C006358B7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75536B5A2770A06C006358B7 /* Message.swift */; };
+		75546E38277450EA001883E1 /* ReviewsVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75546E37277450EA001883E1 /* ReviewsVController.swift */; };
 		7560A8CB2760A2890085CD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7560A8CA2760A2890085CD00 /* AppDelegate.swift */; };
 		7560A8CD2760A2890085CD00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7560A8CC2760A2890085CD00 /* SceneDelegate.swift */; };
 		7560A8CF2760A2890085CD00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7560A8CE2760A2890085CD00 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		7560A8E82761E31D0085CD00 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7560A8E72761E31D0085CD00 /* FirebaseFirestore */; };
 		7560A8EA2761E31D0085CD00 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7560A8E92761E31D0085CD00 /* FirebaseStorage */; };
 		7560A8ED2761E43D0085CD00 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7560A8EC2761E43D0085CD00 /* SignUpPageViewController.swift */; };
+		7571639027773930008E8B39 /* messageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571638F2777392F008E8B39 /* messageConstants.swift */; };
 		758EC4C3276F18A0004CDF76 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758EC4C1276F18A0004CDF76 /* CellTableViewCell.swift */; };
 		758EC4C4276F18A0004CDF76 /* CellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 758EC4C2276F18A0004CDF76 /* CellTableViewCell.xib */; };
 		758EC4C6276FC659004CDF76 /* CellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758EC4C5276FC659004CDF76 /* CellCollectionViewCell.swift */; };
@@ -44,6 +46,7 @@
 		752A771C2769E2BD00F9B500 /* MainSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSubjectViewController.swift; sourceTree = "<group>"; };
 		75536B5827709FDD006358B7 /* MessageApI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApI.swift; sourceTree = "<group>"; };
 		75536B5A2770A06C006358B7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		75546E37277450EA001883E1 /* ReviewsVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsVController.swift; sourceTree = "<group>"; };
 		7560A8C72760A2890085CD00 /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7560A8CA2760A2890085CD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7560A8CC2760A2890085CD00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		7560A8D62760A28D0085CD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7560A8D82760A28D0085CD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7560A8EC2761E43D0085CD00 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
+		7571638F2777392F008E8B39 /* messageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageConstants.swift; sourceTree = "<group>"; };
 		758EC4C1276F18A0004CDF76 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		758EC4C2276F18A0004CDF76 /* CellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellTableViewCell.xib; sourceTree = "<group>"; };
 		758EC4C5276FC659004CDF76 /* CellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -84,7 +88,6 @@
 				751EC88B276736E300103DD8 /* UserApi.swift */,
 				752A77162768A38B00F9B500 /* ProfileModel.swift */,
 				75536B5C2770A6B9006358B7 /* MessageModels */,
-				75536B5827709FDD006358B7 /* MessageApI.swift */,
 				752A771E2769E2FD00F9B500 /* SubjectsModels */,
 			);
 			path = Models;
@@ -102,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				75536B5A2770A06C006358B7 /* Message.swift */,
+				75536B5827709FDD006358B7 /* MessageApI.swift */,
 			);
 			path = MessageModels;
 			sourceTree = "<group>";
@@ -137,6 +141,7 @@
 				758EC4C1276F18A0004CDF76 /* CellTableViewCell.swift */,
 				758EC4C5276FC659004CDF76 /* CellCollectionViewCell.swift */,
 				758EC4C2276F18A0004CDF76 /* CellTableViewCell.xib */,
+				7571638F2777392F008E8B39 /* messageConstants.swift */,
 			);
 			path = Capstone;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				75954AC52761F0D5009158F3 /* LogPageVC */,
 				7560A8CE2760A2890085CD00 /* ViewController.swift */,
 				752A771C2769E2BD00F9B500 /* MainSubjectViewController.swift */,
+				75546E37277450EA001883E1 /* ReviewsVController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,7 +278,9 @@
 				752A771D2769E2BD00F9B500 /* MainSubjectViewController.swift in Sources */,
 				75536B5927709FDD006358B7 /* MessageApI.swift in Sources */,
 				752A771B2769E0EB00F9B500 /* SubjectList.swift in Sources */,
+				7571639027773930008E8B39 /* messageConstants.swift in Sources */,
 				75954ACC27623740009158F3 /* LogInVController.swift in Sources */,
+				75546E38277450EA001883E1 /* ReviewsVController.swift in Sources */,
 				7560A8ED2761E43D0085CD00 /* SignUpPageViewController.swift in Sources */,
 				7560A8CF2760A2890085CD00 /* ViewController.swift in Sources */,
 				75954AD027660BC6009158F3 /* Constants.swift in Sources */,

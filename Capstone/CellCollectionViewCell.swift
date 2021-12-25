@@ -11,6 +11,12 @@ class CellCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagePro: UIImageView!
     
+    @IBOutlet weak var lableCollection: UILabel!
     
+    override func awakeFromNib() {
+        
+        imagePro.layer.cornerRadius = 12
+
+    }
     
 }
