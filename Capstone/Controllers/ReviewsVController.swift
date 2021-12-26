@@ -16,7 +16,7 @@ class ReviewsVController: UIViewController{
     @IBOutlet weak var reviewTextField: UITextField!
     let db = Firestore.firestore()
     
-    var messages = [messageConstants(body: "hhol", sender: "hgjhj"), messageConstants(body: "hjk", sender: "ghjj")]
+    var messages = [messageConstants(body: "messages", sender: "email")]
     
     
     override func viewDidLoad() {
@@ -25,14 +25,25 @@ class ReviewsVController: UIViewController{
         
     }
     func loadMessages(){
-        messages = []
+        
         db.collection("messages").getDocuments { (querySnapshot, error) in
+            self.messages = []
+            
             if let e = error{
                 print("There was issue  retrievining data from Firestore.\(e)")
             }else{
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
-                        print(doc.data())
+                        let data = doc.data()
+                        if let sender = data["sender"] as? String, let messagebody = data["message"] as? String {
+                          let newMessage = messageConstants(body: messagebody, sender: sender)
+                            self.messages.append(newMessage)
+                            
+                            DispatchQueue.main.async {
+                                self.reviewTable.reloadData()
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -43,7 +54,7 @@ class ReviewsVController: UIViewController{
     @IBAction func sencdBtn(_ sender: UIButton) {
         
         if  let messageBody = reviewTextField.text ,
-            let messageSender = Auth.auth().currentUser?.email{
+            let messageSender = Auth.auth().currentUser?.uid{
             db.collection("messages").addDocument(data: ["sender": messageSender,"message":messageBody]) { (error) in
                 if let e = error{
                     print("There was an issue saving data to firebase\(e)")
