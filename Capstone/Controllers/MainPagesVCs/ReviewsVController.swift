@@ -14,6 +14,7 @@ class ReviewsVController: UIViewController{
     
     @IBOutlet weak var reviewTable: UITableView!
     @IBOutlet weak var reviewTextField: UITextField!
+    
     let db = Firestore.firestore()
     
     var messages = [messageConstants(body: "messages", sender: "email")]
@@ -22,7 +23,8 @@ class ReviewsVController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
             loadMessages()
-        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+
     }
     func loadMessages(){
         
@@ -50,11 +52,9 @@ class ReviewsVController: UIViewController{
         }
         
     }
-    
-    @IBAction func sencdBtn(_ sender: UIButton) {
-        
-        if  let messageBody = reviewTextField.text ,
-            let messageSender = Auth.auth().currentUser?.uid{
+    @IBAction func sendActionBtn(_ sender: UIButton) {
+    if  let messageSender = Auth.auth().currentUser?.email , let messageBody = reviewTextField.text{
+            
             db.collection("messages").addDocument(data: ["sender": messageSender,"message":messageBody]) { (error) in
                 if let e = error{
                     print("There was an issue saving data to firebase\(e)")
@@ -76,9 +76,5 @@ extension ReviewsVController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = messages[indexPath.row].body
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
-    
 }
 

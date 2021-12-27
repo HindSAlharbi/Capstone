@@ -11,9 +11,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 
-
-
-class ProfileViewController: UIViewController{
+class ProfileViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var emailtextfiled: UITextField!
     @IBOutlet weak var firstNameProfile: UITextField!
@@ -24,12 +22,15 @@ class ProfileViewController: UIViewController{
     UIButton!
     
     var user: User?
-    var imagePicker:UIImagePickerController!
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //present(imagePicker, animated: true, completion: nil)
-        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+
+        imagePicker.delegate = self
+    
         UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
             self.user = user
             self.emailtextfiled.text = user.email
@@ -45,9 +46,12 @@ class ProfileViewController: UIViewController{
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
-        
+        checkPermission()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.hidesBackButton = true
+    }
     func update() {
         guard let user = user else { return  }
         
@@ -56,6 +60,14 @@ class ProfileViewController: UIViewController{
     }
     
     @IBAction func uploadImage(_ sender: Any) {
+        self.imagePicker.sourceType = .photoLibrary
+        self.present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func pullImage(_ sender: Any) {
+        let storage = Storage.storage()
+        let storageRef = storage.reference(forURL: "gs://capstone-10031.appspot.com")
+        let ref = storageRef.child("uploadPhotoTwo")
         
     }
     
@@ -76,17 +88,16 @@ class ProfileViewController: UIViewController{
     }
     
     func checkPermission(){
-        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
-            PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) -> Void in
-                ()
-            })
-            if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
-            } else {
-                PHPhotoLibrary.requestAuthorization(requestAuthorizationHandler)
-            }
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized{
+            print("we have access to photo")
+        }else {
+            print("we do not have access to photo")
         }
+    }
+            
         
-        func requestAuthorizationHandler(status:PHAuthorizationStatus){
+        
+func requestAuthorizationHandler(status:PHAuthorizationStatus){
             
             if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
                 print("we have access to photo")
@@ -94,68 +105,28 @@ class ProfileViewController: UIViewController{
                 print("we do not have access to photo")
             }
         }
-    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL{
+        if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
             print(url)
-            uploadToCloud(fileURL: url)
+            uploadToTheClould(fileURL: url)
         }
-        dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
     }
-    func uploadToCloud(fileURL: URL){
+    func uploadToTheClould(fileURL : URL){
+        
         let storage = Storage.storage()
         let data = Data()
         let storageRef = storage.reference()
         let localFile = fileURL
-        let photoRef = storageRef.child("uploadPhotoOne")
-        let uploadTask = photoRef.putFile(from: localFile, metadata: nil) { (metadata , err) in
-            guard metadata != nil else {
-                print(err)
+        let photoRef = storageRef.child("uploadPhotoTwo")
+        let uploadTast = photoRef.putFile(from: localFile, metadata: nil) { (metadata, err) in
+            guard let metadata = metadata else{
+                print(err?.localizedDescription)
                 return
             }
-            print("photo Upload")
+            print("Photo Uploaded")
         }
     }
-    
 }
-extension ProfileViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
-        if let pickedImage = info["UIImagePickerEditedImage"] as? UIImage{
-            self.profileImage.image = pickedImage
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-}
-
-//UIImagePickerEditedImage
-
-//@objc func handleSelectProfileImageView(){
-//    print("tap")
-//
-//    //let pickController = UIImagePickerController()
-//    //pickController.delegate = self
-//    //present(picker, animated: true, completion: nil)
-//}
-
-//    @IBAction func selectImage(_ sender: Any) {
-//        let storage = Storage.storage()
-//        let storageRef = storage.reference()
-//        let imagesRef = storageRef.child("uploadPhotoOne")
-//        var spaceRef = storageRef.child("uploadPhotoOne")
-////        let storagePath = "\(gs:capstone-10031.appspot.com)uploadPhotoOne"
-////        spaceRef = storage.reference(forURL: storagePath)
-//
-//        //profileImage.image? = UIImage(systemName: reg)
-//
-//
-//
-//    }
-//
-//        let tapGestuew = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.handleSelectProfileImageView))
-//        profileImage.addGestureRecognizer(tapGestuew)
-//        profileImage.isUserInteractionEnabled = true
-//        let imageTTap = UITapGestureRecognizer(target: self, action: #selector(<#T##@objc method#>), for: .touchUpInside)

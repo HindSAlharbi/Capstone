@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpPageViewController: UIViewController {
     
@@ -24,10 +25,7 @@ class SignUpPageViewController: UIViewController {
         super.viewDidLoad()
         textlabel0()
         textlabel()
-        
     }
-    
-    
     @IBAction func registerBtn(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.register, sender: nil)
     }
@@ -64,16 +62,12 @@ class SignUpPageViewController: UIViewController {
     
     @IBAction func homeBtn(_ sender: Any) {
         signUP()
-        
     }
-    
 }
-
 
 extension SignUpPageViewController{
     
     func textlabel0(){
-        
         var charIndex = 0.0
         let titelText = "Student Gidue"
         for letter in titelText{
@@ -82,8 +76,6 @@ extension SignUpPageViewController{
             }
             charIndex += 1
         }
-        
-        
     }
     
     func textlabel(){
@@ -97,8 +89,9 @@ extension SignUpPageViewController{
             charIndex1 += 1
         }
     }
-    
 }
+    
+
 
 
 

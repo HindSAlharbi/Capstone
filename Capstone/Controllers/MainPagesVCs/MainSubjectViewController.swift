@@ -70,35 +70,5 @@ extension MainSubjectViewController:UICollectionViewDelegate, UICollectionViewDa
         cell1.lableCollection.text = dataQuotoLabel[indexPath.row]
         return cell1
     }
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
-    //    }
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //        return 0
-    //    }
 }
 
-//, UICollectionViewDelegateFlowLayout
-
-
-// var timer: Timer?
-// var currentCellIndex = 0
-//startTimer()
-//    func startTimer(){
-//        timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(nextIndex), userInfo: nil, repeats: true)
-//
-//    }
-//    @objc func nextIndex(){
-//        if currentCellIndex < imageData.count - 1{
-//            currentCellIndex += 1
-//        }else {
-//           currentCellIndex = 0
-//        }
-
-
-//        currentCellIndex += 1
-//        collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-//
-//    }
