@@ -14,6 +14,11 @@ class ReviewsVController: UIViewController{
     
     @IBOutlet weak var reviewTable: UITableView!
     @IBOutlet weak var reviewTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var senderName: UILabel!
+    
+    //var userMessage: User?
     
     let db = Firestore.firestore()
     
@@ -22,11 +27,18 @@ class ReviewsVController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            loadMessages()
+        loadMessages()
         self.navigationItem.setHidesBackButton(true, animated: true)
-
+        
+        self.reviewTable.register(UINib(nibName: "ReviewsCell", bundle: nil), forCellReuseIdentifier: "reviewCell")
+        
+        self.reviewTable.estimatedRowHeight = 80
+        self.reviewTable.rowHeight = UITableView.automaticDimension
     }
+    //MARK: load messages to firebase
+    
     func loadMessages(){
+        
         
         db.collection("messages").getDocuments { (querySnapshot, error) in
             self.messages = []
@@ -38,7 +50,7 @@ class ReviewsVController: UIViewController{
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         if let sender = data["sender"] as? String, let messagebody = data["message"] as? String {
-                          let newMessage = messageConstants(body: messagebody, sender: sender)
+                            let newMessage = messageConstants(body: messagebody, sender: sender)
                             self.messages.append(newMessage)
                             
                             DispatchQueue.main.async {
@@ -53,7 +65,7 @@ class ReviewsVController: UIViewController{
         
     }
     @IBAction func sendActionBtn(_ sender: UIButton) {
-    if  let messageSender = Auth.auth().currentUser?.email , let messageBody = reviewTextField.text{
+        if let messageSender = Auth.auth().currentUser?.email  , let messageBody =  reviewTextField.text{
             
             db.collection("messages").addDocument(data: ["sender": messageSender,"message":messageBody]) { (error) in
                 if let e = error{
@@ -63,18 +75,39 @@ class ReviewsVController: UIViewController{
                 }
             }
         }
-        
     }
 }
+
 extension ReviewsVController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
-        cell.textLabel?.text = messages[indexPath.row].body
-        return cell
+        let cellReview = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewsCell
+        
+        cellReview.lableReview.text = messages[indexPath.row].body
+        //cellReview.firstNameReviewLable.text = messages[indexPath.row]
+        return cellReview
     }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

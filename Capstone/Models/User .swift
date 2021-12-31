@@ -20,41 +20,33 @@ class User {
 extension User {
     
     static func getUser(dict: [String: Any]) -> User {
-       
+        
         let user = User()
         
-       
+        
         user.email = dict["email"] as? String
         user.firstName = dict["firstName"] as? String
         user.lastName = dict["lastName"] as? String
         user.proImage = dict["Image"] as? UIImage
-       
+        
         return user
     }
     static func CreateUser(email:String,firstName: String, lastName: String) -> [String: Any] {
-       
+        
         let newUser = [
             "email" :email, "firstName": firstName, "lastName": lastName
-                    ] as [String : Any]
+        ] as [String : Any]
         
         return newUser
     }
     static func update(firstName: String,lastName: String) -> [String: Any] {
-    
+        
         
         let newUser = ["firstName": firstName, "lastName": lastName] as [String : Any]
-            
-            return newUser
+        
+        return newUser
         
         
     }
-    static func sendUserReview(body:String) -> [String: Any] {
-    
-        
-        let newMessage = ["body": body] as [String : Any]
-            
-            return newMessage
-
-}
     
 }

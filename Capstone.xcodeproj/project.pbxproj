@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751B49AC277B412300464345 /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B49AA277B412300464345 /* ReviewsCell.swift */; };
+		751B49AD277B412300464345 /* ReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751B49AB277B412300464345 /* ReviewsCell.xib */; };
 		751EC88727672FAE00103DD8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EC88627672FAE00103DD8 /* ProfileViewController.swift */; };
 		751EC88A276736B400103DD8 /* User .swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EC889276736B400103DD8 /* User .swift */; };
 		751EC88C276736E300103DD8 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EC88B276736E300103DD8 /* UserApi.swift */; };
@@ -20,7 +22,6 @@
 		7560A8D22760A2890085CD00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7560A8D02760A2890085CD00 /* Main.storyboard */; };
 		7560A8D42760A28D0085CD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7560A8D32760A28D0085CD00 /* Assets.xcassets */; };
 		7560A8D72760A28D0085CD00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7560A8D52760A28D0085CD00 /* LaunchScreen.storyboard */; };
-		7560A8E22761E31D0085CD00 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7560A8E12761E31D0085CD00 /* FirebaseAnalytics */; };
 		7560A8E42761E31D0085CD00 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7560A8E32761E31D0085CD00 /* FirebaseAuth */; };
 		7560A8E62761E31D0085CD00 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7560A8E52761E31D0085CD00 /* FirebaseDatabase */; };
 		7560A8E82761E31D0085CD00 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7560A8E72761E31D0085CD00 /* FirebaseFirestore */; };
@@ -33,9 +34,15 @@
 		75954ACA27622161009158F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75954AC927622161009158F3 /* GoogleService-Info.plist */; };
 		75954ACC27623740009158F3 /* LogInVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75954ACB27623740009158F3 /* LogInVController.swift */; };
 		75954AD027660BC6009158F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75954ACF27660BC6009158F3 /* Constants.swift */; };
+		75E860A1277A1C02000FC830 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 75E860A0277A1C02000FC830 /* FirebaseAnalytics */; };
+		75EF5B9E277F111B00EDE4B2 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF5B9D277F111B00EDE4B2 /* AddCommentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D3523AA88BDA4EF7460B539 /* Pods-Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Capstone/Pods-Capstone.debug.xcconfig"; sourceTree = "<group>"; };
+		6678A5EC849184A6DC30CB14 /* Pods-Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone.release.xcconfig"; path = "Target Support Files/Pods-Capstone/Pods-Capstone.release.xcconfig"; sourceTree = "<group>"; };
+		751B49AA277B412300464345 /* ReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
+		751B49AB277B412300464345 /* ReviewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsCell.xib; sourceTree = "<group>"; };
 		751EC88627672FAE00103DD8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		751EC889276736B400103DD8 /* User .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User .swift"; sourceTree = "<group>"; };
 		751EC88B276736E300103DD8 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
@@ -59,6 +66,9 @@
 		75954AC927622161009158F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75954ACB27623740009158F3 /* LogInVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVController.swift; sourceTree = "<group>"; };
 		75954ACF27660BC6009158F3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		75E860A2277A241B000FC830 /* Pods_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75EF5B9D277F111B00EDE4B2 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
+		9EE9D0390437877563E16F4E /* Pods_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +78,7 @@
 			files = (
 				7560A8E62761E31D0085CD00 /* FirebaseDatabase in Frameworks */,
 				7560A8E82761E31D0085CD00 /* FirebaseFirestore in Frameworks */,
-				7560A8E22761E31D0085CD00 /* FirebaseAnalytics in Frameworks */,
+				75E860A1277A1C02000FC830 /* FirebaseAnalytics in Frameworks */,
 				7560A8EA2761E31D0085CD00 /* FirebaseStorage in Frameworks */,
 				7560A8E42761E31D0085CD00 /* FirebaseAuth in Frameworks */,
 			);
@@ -77,12 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		312B92499979666D7470A457 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D3523AA88BDA4EF7460B539 /* Pods-Capstone.debug.xcconfig */,
+				6678A5EC849184A6DC30CB14 /* Pods-Capstone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		751EC888276735F300103DD8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				751EC889276736B400103DD8 /* User .swift */,
 				751EC88B276736E300103DD8 /* UserApi.swift */,
 				752A77162768A38B00F9B500 /* ProfileModel.swift */,
+				7571638F2777392F008E8B39 /* messageConstants.swift */,
 				752A771E2769E2FD00F9B500 /* SubjectsModels */,
 			);
 			path = Models;
@@ -99,10 +119,10 @@
 		7560A8BE2760A2890085CD00 = {
 			isa = PBXGroup;
 			children = (
-				75954AC927622161009158F3 /* GoogleService-Info.plist */,
 				7560A8C92760A2890085CD00 /* Capstone */,
 				7560A8C82760A2890085CD00 /* Products */,
 				758EC4C0276B662F004CDF76 /* Frameworks */,
+				312B92499979666D7470A457 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,17 +137,15 @@
 		7560A8C92760A2890085CD00 /* Capstone */ = {
 			isa = PBXGroup;
 			children = (
-				7560A8EB2761E4040085CD00 /* Controllers */,
 				751EC888276735F300103DD8 /* Models */,
-				7560A8EE2761E44F0085CD00 /* Resource */,
 				7560A8EF2761E46F0085CD00 /* View */,
+				7560A8EB2761E4040085CD00 /* Controllers */,
+				75F01BF2277D911200215F8D /* CustomViewCell */,
+				7560A8EE2761E44F0085CD00 /* Resource */,
 				7560A8D32760A28D0085CD00 /* Assets.xcassets */,
 				7560A8D82760A28D0085CD00 /* Info.plist */,
+				75954AC927622161009158F3 /* GoogleService-Info.plist */,
 				75954ACF27660BC6009158F3 /* Constants.swift */,
-				758EC4C1276F18A0004CDF76 /* CellTableViewCell.swift */,
-				758EC4C5276FC659004CDF76 /* CellCollectionViewCell.swift */,
-				758EC4C2276F18A0004CDF76 /* CellTableViewCell.xib */,
-				7571638F2777392F008E8B39 /* messageConstants.swift */,
 			);
 			path = Capstone;
 			sourceTree = "<group>";
@@ -163,8 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				7560A8CE2760A2890085CD00 /* ViewController.swift */,
-				75546E37277450EA001883E1 /* ReviewsVController.swift */,
 				752A771C2769E2BD00F9B500 /* MainSubjectViewController.swift */,
+				75546E37277450EA001883E1 /* ReviewsVController.swift */,
+				75EF5B9D277F111B00EDE4B2 /* AddCommentsViewController.swift */,
 			);
 			path = MainPagesVCs;
 			sourceTree = "<group>";
@@ -172,6 +191,8 @@
 		758EC4C0276B662F004CDF76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75E860A2277A241B000FC830 /* Pods_Capstone.framework */,
+				9EE9D0390437877563E16F4E /* Pods_Capstone.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,6 +207,34 @@
 			path = LogPageVC;
 			sourceTree = "<group>";
 		};
+		75F01BF2277D911200215F8D /* CustomViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				758EC4C5276FC659004CDF76 /* CellCollectionViewCell.swift */,
+				75F01BF4277D91AE00215F8D /* MainTableViewCell */,
+				75F01BF3277D915F00215F8D /* ReviewTableViewCell */,
+			);
+			path = CustomViewCell;
+			sourceTree = "<group>";
+		};
+		75F01BF3277D915F00215F8D /* ReviewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				751B49AA277B412300464345 /* ReviewsCell.swift */,
+				751B49AB277B412300464345 /* ReviewsCell.xib */,
+			);
+			path = ReviewTableViewCell;
+			sourceTree = "<group>";
+		};
+		75F01BF4277D91AE00215F8D /* MainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				758EC4C1276F18A0004CDF76 /* CellTableViewCell.swift */,
+				758EC4C2276F18A0004CDF76 /* CellTableViewCell.xib */,
+			);
+			path = MainTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7560A8DB2760A28D0085CD00 /* Build configuration list for PBXNativeTarget "Capstone" */;
 			buildPhases = (
+				52CE5578C349E4E6D7440C7A /* [CP] Check Pods Manifest.lock */,
 				7560A8C32760A2890085CD00 /* Sources */,
 				7560A8C42760A2890085CD00 /* Frameworks */,
 				7560A8C52760A2890085CD00 /* Resources */,
+				FB49EA5504926C08294B770A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,11 +254,11 @@
 			);
 			name = Capstone;
 			packageProductDependencies = (
-				7560A8E12761E31D0085CD00 /* FirebaseAnalytics */,
 				7560A8E32761E31D0085CD00 /* FirebaseAuth */,
 				7560A8E52761E31D0085CD00 /* FirebaseDatabase */,
 				7560A8E72761E31D0085CD00 /* FirebaseFirestore */,
 				7560A8E92761E31D0085CD00 /* FirebaseStorage */,
+				75E860A0277A1C02000FC830 /* FirebaseAnalytics */,
 			);
 			productName = Capstone;
 			productReference = 7560A8C72760A2890085CD00 /* Capstone.app */;
@@ -259,10 +310,54 @@
 				7560A8D42760A28D0085CD00 /* Assets.xcassets in Resources */,
 				7560A8D22760A2890085CD00 /* Main.storyboard in Resources */,
 				758EC4C4276F18A0004CDF76 /* CellTableViewCell.xib in Resources */,
+				751B49AD277B412300464345 /* ReviewsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52CE5578C349E4E6D7440C7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Capstone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB49EA5504926C08294B770A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7560A8C32760A2890085CD00 /* Sources */ = {
@@ -270,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				752A771D2769E2BD00F9B500 /* MainSubjectViewController.swift in Sources */,
+				751B49AC277B412300464345 /* ReviewsCell.swift in Sources */,
 				752A771B2769E0EB00F9B500 /* SubjectList.swift in Sources */,
 				7571639027773930008E8B39 /* messageConstants.swift in Sources */,
 				75954ACC27623740009158F3 /* LogInVController.swift in Sources */,
@@ -278,6 +374,7 @@
 				7560A8CF2760A2890085CD00 /* ViewController.swift in Sources */,
 				75954AD027660BC6009158F3 /* Constants.swift in Sources */,
 				7560A8CB2760A2890085CD00 /* AppDelegate.swift in Sources */,
+				75EF5B9E277F111B00EDE4B2 /* AddCommentsViewController.swift in Sources */,
 				752A77172768A38B00F9B500 /* ProfileModel.swift in Sources */,
 				758EC4C6276FC659004CDF76 /* CellCollectionViewCell.swift in Sources */,
 				758EC4C3276F18A0004CDF76 /* CellTableViewCell.swift in Sources */,
@@ -428,23 +525,24 @@
 		};
 		7560A8DC2760A28D0085CD00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D3523AA88BDA4EF7460B539 /* Pods-Capstone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/CLTypingLabel/CLTypingLabel.framework/Headers\"";
 				INFOPLIST_FILE = Capstone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com..Capstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -455,23 +553,23 @@
 		};
 		7560A8DD2760A28D0085CD00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6678A5EC849184A6DC30CB14 /* Pods-Capstone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/CLTypingLabel/CLTypingLabel.framework/Headers\"";
 				INFOPLIST_FILE = Capstone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com..Capstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -515,11 +613,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7560A8E12761E31D0085CD00 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7560A8E02761E31D0085CD00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
 		7560A8E32761E31D0085CD00 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7560A8E02761E31D0085CD00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -539,6 +632,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7560A8E02761E31D0085CD00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		75E860A0277A1C02000FC830 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7560A8E02761E31D0085CD00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

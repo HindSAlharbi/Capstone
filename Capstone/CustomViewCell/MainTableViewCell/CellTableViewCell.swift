@@ -10,8 +10,10 @@ import UIKit
 class CellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageTable: UIImageView!
-    
     @IBOutlet weak var titlelable: UILabel!
+    @IBOutlet weak var likesImage: UIImageView!
+    @IBOutlet weak var numLike: UILabel!
+    @IBOutlet weak var timestapLable: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +27,10 @@ class CellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configureCell(subject: SubjectList){
+        
+    }
+    
     
 }

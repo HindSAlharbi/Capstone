@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 
+
 class SignUpPageViewController: UIViewController {
     
     @IBOutlet weak var titleLable: UILabel!

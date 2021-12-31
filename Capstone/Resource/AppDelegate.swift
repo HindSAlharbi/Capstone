@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let db = Firestore.firestore()
 
-       // print(db)
+        print(db)
         return true
     
     }

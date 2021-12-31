@@ -19,13 +19,7 @@ class UserApi {
         
         completion(true)
     }
-//    static func addMessage(uid:String,email:String,firstName:String,lastName: String,text: String, completion: @escaping (Bool) -> Void) {
-//        
-//        let refUsers = Firestore.firestore().collection("Message")
-//        refUsers.document(uid).setData(Message.CreateMessage(text:text))
-//        
-//        completion(true)
-//    }
+
     static func updateUserInfo(currentUser:User,uid:String,firstName:String,lastName: String) {
             
         var first = ""
@@ -45,22 +39,6 @@ class UserApi {
         refUsers.document(uid).setData(User.update( firstName: first, lastName: last),merge: true)
             
         }
-    
-        static func sendReview(currentUser:User,uid:String,body: String){
-          var userReview = ""
-            if userReview == currentUser.body {
-                userReview = currentUser.body ?? ""
-            } else {
-                userReview = body
-            }
-            
-        
-            
-        let refUsers = Firestore.firestore().collection("Users")
-            refUsers.document(uid).setData(User.sendUserReview(body: body),merge: true)
-            
-        }
-
     static func getUser(uid:String,completion: @escaping (User) -> Void) {
 
         let refUsers = Firestore.firestore().collection("Users")
@@ -79,16 +57,3 @@ class UserApi {
 
 
 
-//    static func getMessage(uid:String,completion: @escaping (User) -> Void) {
-//
-//        let refUsers = Firestore.firestore().collection("Users")
-//
-//        refUsers.document(uid).getDocument { document, error in
-//            if let document = document, document.exists {
-//                let user = User.getUser(dict: document.data()!)
-//                completion(user)
-//
-//}
-//        }
-//
-//    }

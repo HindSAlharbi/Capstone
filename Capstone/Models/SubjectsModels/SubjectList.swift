@@ -9,9 +9,12 @@ import Foundation
 import UIKit
 
 struct SubjectList{
-    
+
 let subjectTitle: String
-let ImageName: UIImage
-    
-    
+let subjectImage: UIImage
+let timestamp: Date
+let numLikes: Int
+let numComments: Int
+let documentId: String
+
 }
