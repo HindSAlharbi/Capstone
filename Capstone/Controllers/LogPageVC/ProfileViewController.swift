@@ -60,16 +60,12 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate,
     }
     
     @IBAction func uploadImage(_ sender: Any) {
+        
         self.imagePicker.sourceType = .photoLibrary
         self.present(self.imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func pullImage(_ sender: Any) {
-        let storage = Storage.storage()
-        let storageRef = storage.reference(forURL: "gs://capstone-10031.appspot.com")
-        let ref = storageRef.child("uploadPhotoTwo")
-        
-    }
+    
     
     @IBAction func logOutBtn(_ sender: UIBarButtonItem) {
         

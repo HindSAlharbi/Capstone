@@ -13,5 +13,6 @@ import UIKit
     struct messageConstants {
        let body: String
        let sender: String
+       let userName: String
     }
     

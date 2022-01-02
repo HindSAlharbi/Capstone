@@ -8,15 +8,13 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FirebaseFirestore
 
 class MainSubjectViewController: UIViewController {
     
     @IBOutlet weak var mainTable: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
-   //let timestamp: Date
-   // let numLikes: Int
-   // let numComments: Int
-    //let documentId: String
+   
     
     let db = Firestore.firestore()
 
@@ -28,40 +26,18 @@ class MainSubjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mainTable.register(UINib(nibName: "CellTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        self.mainTable.delegate = self
-        self.mainTable.dataSource = self
-        self.mainTable.rowHeight = UITableView.automaticDimension;
-        //self.tableView.estimatedRowHeight = 44.0;
-        
+        mainTable.delegate = self
+        mainTable.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
-        //loadData()
         
+        self.mainTable.rowHeight = UITableView.automaticDimension;
+        
+ 
         // Do any additional setup after loading the view.
     }
-//    func loadData(){
-//
-//        db.collection("mainSubjects").document("").setData([
-//            "subjectTitle": "How to rent Apartement",
-//           "subjectImage": "house",
-//           "timestamp": FieldValue.serverTimestamp(),
-//       "numComments" : 0,
-//         "numLikes" : 0,
-//
-//         ]) { err in
-//            if let err = err {
-//                print("Error writing document: \(err)")
-//             } else {
-//                 print("Document successfully written!")
-//             }
-//         }
-        
-        
-    
- 
 
     override func viewWillAppear(_ animated: Bool) {
-        
         
     }
     @IBAction func nextPage(_ sender: Any) {
@@ -84,7 +60,6 @@ extension MainSubjectViewController: UITableViewDelegate, UITableViewDataSource{
             
             cell.titlelable.text = self.mainSubjects[indexPath.row].subjectTitle
             cell.imageTable.image = mainSubjects[indexPath.row].subjectImage
-            cell.configureCell(subject: mainSubjects[indexPath.row])
             
             return cell
         }else{
