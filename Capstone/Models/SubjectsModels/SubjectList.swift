@@ -12,9 +12,12 @@ struct SubjectList{
 
 let subjectTitle: String
 let subjectImage: UIImage
-let timestamp: Date
-let numLikes: Int
-let numComments: Int
-let documentId: String
+    
+}
 
+struct SecondVCDetiels {
+    let title: String
+    let imageDetiels: UIImage
+    let subTitle: String
+    let titleDetiels: String
 }

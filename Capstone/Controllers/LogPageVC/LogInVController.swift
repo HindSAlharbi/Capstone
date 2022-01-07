@@ -17,14 +17,12 @@ class LogInVController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkUserInfor()
         labeltext3()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if Auth.auth().currentUser != nil {
-            performSegue(withIdentifier: Constants.loginHome, sender: self)
-        }
+        
     }
     @IBAction func LogInToHome(_ sender: Any) {
         if let email = logInTextField.text, let password = passTextField.text{
@@ -45,16 +43,13 @@ class LogInVController: UIViewController {
         
     }
     func checkUserInfor(){
-        if Auth.auth().currentUser != nil{
-            print(Auth.auth().currentUser?.uid ?? "")
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: Constants.loginHome, sender: self)
         }
     }
-    
-    
 }
 
 extension LogInVController{
-    
     func labeltext3(){
         
         var charIndex3 = 0.0
@@ -65,7 +60,6 @@ extension LogInVController{
             }
             charIndex3 += 1
         }
-        
     }
 }
 

@@ -18,7 +18,7 @@ class MainSubjectViewController: UIViewController {
     
     let db = Firestore.firestore()
 
-    let mainSubjects : [SubjectList] = [SubjectList(subjectTitle: "How to rent Apartement", subjectImage: UIImage(named: "house")!, timestamp: Date(), numLikes: 0,numComments: 0,documentId: ""), SubjectList(subjectTitle: "How to open bank accont in USA", subjectImage: UIImage(named:"bank")!,timestamp: Date(),numLikes: 0,numComments: 0, documentId: ""), SubjectList(subjectTitle: "Saudi Clubs in USA",subjectImage: UIImage(named:"saudiClub")!,timestamp: Date(),numLikes: 0,numComments: 0, documentId: ""), SubjectList(subjectTitle: "Emergency Contact",subjectImage: UIImage(named:"contact")!, timestamp: Date(),numLikes: 0,numComments: 0, documentId: "")]
+    var mainSubjects : [SubjectList] = [SubjectList(subjectTitle: "How to rent Apartement", subjectImage: UIImage(named: "house")!), SubjectList(subjectTitle: "How to open bank accont in USA", subjectImage: UIImage(named:"bank")!), SubjectList(subjectTitle: "Saudi Clubs in USA",subjectImage: UIImage(named:"saudiClub")!), SubjectList(subjectTitle: "Emergency Contact",subjectImage: UIImage(named:"contact")!)]
     
     let imageData = [UIImage(named:"4")!,UIImage(named: "5")!,UIImage(named:"6")!,UIImage(named:"7")!]
     let dataQuotoLabel = ["Your best Friend during your study","Just Start","Your Giude","No lost with Student Giude in USA"]
@@ -33,17 +33,26 @@ class MainSubjectViewController: UIViewController {
         
         self.mainTable.rowHeight = UITableView.automaticDimension;
         
+        loadMainSubject()
  
         // Do any additional setup after loading the view.
     }
-
-    override func viewWillAppear(_ animated: Bool) {
+    
+    func loadMainSubject(){
+        if Auth.auth().currentUser?.email != nil{
+            db.collection("mainSubjects").addDocument(data:["subjectTitle" :"",  "subjectImage": ""])
+            mainSubjects = [SubjectList(subjectTitle: "How to rent Apartement", subjectImage: UIImage(named: "house")!), SubjectList(subjectTitle: "How to open bank accont in USA", subjectImage: UIImage(named:"bank")!), SubjectList(subjectTitle: "Saudi Clubs in USA",subjectImage: UIImage(named:"saudiClub")!), SubjectList(subjectTitle: "Emergency Contact",subjectImage: UIImage(named:"contact")!)]
         
-    }
-    @IBAction func nextPage(_ sender: Any) {
-        performSegue(withIdentifier: "next", sender: nil)
-    }
+        }
+            }
+        
+    
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
 }
 
 // MARK: Tableview delegate and datasource
@@ -56,18 +65,28 @@ extension MainSubjectViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if  let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CellTableViewCell{
+        
+    if  let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CellTableViewCell{
             
             cell.titlelable.text = self.mainSubjects[indexPath.row].subjectTitle
             cell.imageTable.image = mainSubjects[indexPath.row].subjectImage
-            
-            return cell
-        }else{
-        
+    
+        return cell
+    
+    }else{
+    
+    }
         return UITableViewCell()
-        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CoreSubjectsViewController") as? CoreSubjectsViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
 }
+    
+    
+
 // MARK: Collectionview delegate and datasource
 extension MainSubjectViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     
@@ -82,28 +101,3 @@ extension MainSubjectViewController:UICollectionViewDelegate, UICollectionViewDa
         return cell1
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    let data = ["How to rent Apartement","How to open bank accont in USA","Saudi Clubs in USA","Emergency Contact"]
-
-//    let labelTitel = ["Make Your Journe memerale","Here to start","Hind"]
-
-//    let imageDataTable = [UIImage(named:"house")!,UIImage(named: "bank"),UIImage(named:"saudiClub")!,UIImage(named:"contact")!]

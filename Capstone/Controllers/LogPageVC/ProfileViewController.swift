@@ -91,9 +91,7 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate,
         }
     }
             
-        
-        
-func requestAuthorizationHandler(status:PHAuthorizationStatus){
+   func requestAuthorizationHandler(status:PHAuthorizationStatus){
             
             if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
                 print("we have access to photo")

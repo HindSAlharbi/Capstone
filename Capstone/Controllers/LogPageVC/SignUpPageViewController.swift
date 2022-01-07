@@ -84,7 +84,7 @@ extension SignUpPageViewController{
         var charIndex1 = 0.0
         let titelText = "Student Gidue"
         for letter in titelText{
-            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex1, repeats: false) { (timer )in
+            Timer.scheduledTimer(withTimeInterval: 1 * charIndex1, repeats: false) { (timer )in
                 self.wrongTextField?.text?.append(letter)
             }
             charIndex1 += 1
