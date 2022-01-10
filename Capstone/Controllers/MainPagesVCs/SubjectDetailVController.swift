@@ -10,13 +10,15 @@ import Firebase
 import FirebaseFirestore
 import FirebaseStorage
 
-class CoreSubjectsViewController: UIViewController {
-
+class SubjectDetailVController: UIViewController {
+    
+    // Outlets
     @IBOutlet weak var superTitleLabel: UILabel!
     @IBOutlet weak var superImage: UIImageView!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var coreTextLabel: UILabel!
     
+    // Varabiles
     var secondDetias:SecondVCDetiels!
     
     override func viewDidLoad() {
@@ -36,8 +38,6 @@ class CoreSubjectsViewController: UIViewController {
     }
 
     @IBAction func shareIdea(_ sender: Any) {
-        
       performSegue(withIdentifier: "ideas", sender: nil)
-        
     }
 }

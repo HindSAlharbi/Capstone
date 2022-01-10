@@ -9,23 +9,18 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
-import FirebaseFirestore
 
 
-//thoughtCell
-class PostViewController: UIViewController, UITextViewDelegate {
-    
+class PostVController: UIViewController, UITextViewDelegate {
+   
+    // Outlets
     @IBOutlet weak var categorySegment: UISegmentedControl!
-    
     @IBOutlet weak var userNameTxt: UITextField!
-    
     @IBOutlet weak var thoughtTxt: UITextView!
-    
     @IBOutlet weak var postBtnn: UIButton!
     
     // Variables
-    private var selectedCategory = ThoughtCategory.general
-    
+    private var selectedCategory = ThoughtCategory.general.rawValue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,46 +33,47 @@ class PostViewController: UIViewController, UITextViewDelegate {
         thoughtTxt.delegate = self
         
         self.navigationItem.setHidesBackButton(true, animated: true)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.hidesBackButton = true
     }
-    //MARK: load messages to firebase
-   
-  
+
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
         textView.textColor = UIColor.darkGray
     }
-    
+
     @IBAction func categoryChange(_ sender: Any) {
         
-        
         switch categorySegment.selectedSegmentIndex{
-    
         case 0:
-            selectedCategory = ThoughtCategory.general
+            selectedCategory = ThoughtCategory.general.rawValue
         case 1:
-            selectedCategory = ThoughtCategory.university
+            selectedCategory = ThoughtCategory.university.rawValue
         default:
-            selectedCategory = ThoughtCategory.safeer
-//        default:
-//            selectedCategory = ThoughtCategory.advices
+            selectedCategory = ThoughtCategory.safeer.rawValue
         }
+        
 
     }
-    
+   
+    //MARK: load table data to firebase
+
     @IBAction func postBtnTapped(_ sender: Any) {
-        guard let username = userNameTxt.text else{return}
+        if (Auth.auth().currentUser != nil){
+            
+        guard let userN = userNameTxt.text else{return}
         
         Firestore.firestore().collection("thoughts").addDocument(data: [
-            
-            "userN": userNameTxt.text!,
-            "TxtThought": thoughtTxt.text!
-        
+           
+            "userN": userN,
+            "TxtThought": thoughtTxt.text!,
+            "category" : selectedCategory,
+            "numComments" : 0,
+            "numLikes" : 0,
+            "timestamp" : FieldValue.serverTimestamp(),
         ]) { err in
             if let err = err {
                 debugPrint("Error adding document:\(err)")
@@ -87,6 +83,19 @@ class PostViewController: UIViewController, UITextViewDelegate {
         }
     }
 }
+
+}
+
+
+
+
+
+
+
+
+//FieldValue.serverTimestamp()
+
+
 //"category": selectedCategory
 //"numComments": 0
 //"numLikes": 0

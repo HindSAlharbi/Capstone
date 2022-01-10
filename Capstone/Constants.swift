@@ -17,6 +17,7 @@ struct Constants {
     
     static let skipToMaine = "skipToMaine"
     static let logOut = "logOut"
+   let COMMENT_TXT = "CommentTxt"
     
 }
 

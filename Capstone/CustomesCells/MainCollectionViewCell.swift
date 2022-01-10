@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CellCollectionViewCell: UICollectionViewCell {
+class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagePro: UIImageView!
     
@@ -17,6 +17,7 @@ class CellCollectionViewCell: UICollectionViewCell {
         
         imagePro.layer.cornerRadius = 12
 
+        
     }
-    
 }
+

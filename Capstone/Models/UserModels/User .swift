@@ -7,15 +7,16 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class User {
     
     var email: String?
     var firstName: String?
     var lastName: String?
+    var dataCreated: Data!
     var proImage: UIImage?
-    var body: String?
-    var sender: String?
+    
 }
 extension User {
     
@@ -28,13 +29,14 @@ extension User {
         user.firstName = dict["firstName"] as? String
         user.lastName = dict["lastName"] as? String
         user.proImage = dict["Image"] as? UIImage
+        user.dataCreated = dict["dataCreated"] as? Data ?? Data()
         
         return user
     }
-    static func CreateUser(email:String,firstName: String, lastName: String) -> [String: Any] {
+    static func CreateUser(email:String,firstName: String, lastName: String ) -> [String: Any] {
         
         let newUser = [
-            "email" :email, "firstName": firstName, "lastName": lastName
+            "email" :email, "firstName": firstName, "lastName": lastName 
         ] as [String : Any]
         
         return newUser

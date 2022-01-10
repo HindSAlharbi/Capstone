@@ -11,9 +11,8 @@ import Firebase
 
 class SaudiClubsViewController: UIViewController {
     
+    // Outlets
     @IBOutlet weak var webView: WKWebView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class SaudiClubsViewController: UIViewController {
       let url = URL(string: "http://sacmclubs.org")
        let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)
-
+           
         print(url)
     }
     override func viewDidLayoutSubviews() {

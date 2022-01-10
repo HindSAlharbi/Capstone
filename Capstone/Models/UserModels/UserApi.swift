@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestore
 import Firebase
 import UIKit
+import SwiftUI
 
 class UserApi {
     
@@ -55,5 +56,7 @@ class UserApi {
 }
 
 
-
+//Firestore.firestore().collection(USERS_REF).document(userId).setData([
+//    USERNAME : username,
+//    DATE_CREATED : FieldValue.serverTimestamp()
 
