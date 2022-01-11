@@ -9,11 +9,10 @@ import Foundation
 import FirebaseFirestore
 import Firebase
 import UIKit
-import SwiftUI
 
 class UserApi {
     
-    static func addUser(uid:String,email:String,firstName:String,lastName: String, completion: @escaping (Bool) -> Void) {
+    static func addUser(uid:String,email:String,firstName:String,lastName: String, dataCreated: Data, completion: @escaping (Bool) -> Void) {
         
         let refUsers = Firestore.firestore().collection("Users")
         refUsers.document(uid).setData(User.CreateUser(email: email, firstName: firstName, lastName: lastName))

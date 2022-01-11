@@ -14,7 +14,7 @@ class CommentsVController: UIViewController {
     // Outlet
     @IBOutlet weak var commentTable: UITableView!
     @IBOutlet weak var commentTextFild: UITextField!
-    @IBOutlet weak var keyboardView: UIView!
+   // @IBOutlet weak var keyboardView: UIView!
     
     // Variables
 var thought:Thought!
@@ -37,8 +37,6 @@ var commentListener : ListenerRegistration!
         if Auth.auth().currentUser?.uid == nil {
         }else{
         }
-            
-       // self.view.bindToKeyboard()
         // Do any additional setup after loading the view.
     }
     

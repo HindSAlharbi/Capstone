@@ -35,9 +35,7 @@ class SignUpVController: UIViewController {
         performSegue(withIdentifier: Constants.login, sender: nil)
     }
     
-    @IBAction func skipBtnAction(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: Constants.skipToMaine, sender: nil)
-    }
+    
     
     func signUP(){
         
@@ -57,7 +55,7 @@ class SignUpVController: UIViewController {
                             }
                         })
                 
-                UserApi.addUser(uid: authResult?.user.uid ?? "", email: self.emailTextFiled.text ?? "", firstName: self.firstNameTextField.text ?? "", lastName: self.lastNameTextField.text ?? "",completion:  { check in
+                UserApi.addUser(uid: authResult?.user.uid ?? "", email: self.emailTextFiled.text ?? "", firstName: self.firstNameTextField.text ?? "", lastName: self.lastNameTextField.text ?? "", dataCreated: Data() , completion:  { check in
                             if check {
                                 print("Done saving in Database")
                                 self.performSegue(withIdentifier: Constants.mainPage, sender: nil)

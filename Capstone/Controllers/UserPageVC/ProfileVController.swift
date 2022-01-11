@@ -11,26 +11,29 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 
-class ProfileViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
+class ProfileVController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    //Outlet
     @IBOutlet weak var emailtextfiled: UITextField!
     @IBOutlet weak var firstNameProfile: UITextField!
     @IBOutlet weak var lastNameProfile: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
-    
     @IBOutlet weak var tapToCahnePhoto:
     UIButton!
     
+    // Variables
     var user: User?
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //present(imagePicker, animated: true, completion: nil)
-        self.navigationItem.setHidesBackButton(true, animated: true)
-
+        
+        // custome outlet
+        
         imagePicker.delegate = self
-    
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        profileImage.clipsToBounds = true
+        
+        
         UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
             self.user = user
             self.emailtextfiled.text = user.email
@@ -39,9 +42,9 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate,
             self.profileImage.image = user.proImage
         }
         
-        if Auth.auth().currentUser?.uid == nil {
-        }else{
-        }
+//        if Auth.auth().currentUser?.uid == nil {
+//        }else{
+//        }
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
@@ -65,8 +68,6 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate,
         self.present(self.imagePicker, animated: true, completion: nil)
     }
     
-    
-    
     @IBAction func logOutBtn(_ sender: UIBarButtonItem) {
         
         do {
@@ -83,6 +84,27 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate,
         update()
     }
     
+    @IBAction func lightDarkMoodBtn(_ sender: Any) {
+        if #available(iOS 15.0, *){
+            let appDelegate = UIApplication.shared.windows.first
+            if (sender as AnyObject).isOn {
+                appDelegate?.overrideUserInterfaceStyle = .dark
+                return
+            }
+            appDelegate?.overrideUserInterfaceStyle = .light
+            return
+        }
+    }
+    @IBAction func languageBtn(_ sender: Any) {
+        let alert = UIAlertController(title: "You can change your language by going to your device settings.", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let settings = UIAlertAction(title: "See Settings", style: .default, handler: { (action) -> Void in
+            UIApplication.shared.open(URL(string: "App-Prefs:root=GENERAL")!, options: [:], completionHandler: nil)
+        })
+        alert.addAction(settings)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func checkPermission(){
         if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized{
             print("we have access to photo")
@@ -90,15 +112,15 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate,
             print("we do not have access to photo")
         }
     }
-            
-   func requestAuthorizationHandler(status:PHAuthorizationStatus){
-            
-            if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
-                print("we have access to photo")
-            }else {
-                print("we do not have access to photo")
-            }
+    
+    func requestAuthorizationHandler(status:PHAuthorizationStatus){
+        
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
+            print("we have access to photo")
+        }else {
+            print("we do not have access to photo")
         }
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
@@ -123,4 +145,4 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate,
         }
     }
 }
-    
+

@@ -41,8 +41,10 @@ class MainSubjectsTableViewCell: UITableViewCell {
     
     let formatter = DateFormatter()
     formatter.dateFormat = "MMM d, hh:mm"
+        
     let timestamp = formatter.string(from: subjectList.maintimestamp)
-    timestapLable.text = timestamp
+   print(timestamp)
+        timestapLable.text = timestamp
     }
 }
 
@@ -52,8 +54,4 @@ class MainSubjectsTableViewCell: UITableViewCell {
 
 
 
-//        Firestore.firestore().collection("mainSubject").document(mainSubject.documentId)
-//                   .setData(["numLike" : mainSubject.numLike + 1])
-//        Firestore.firestore().document( "\(mainSubject!)")
-//    .updateData(["numLike" : mainSubject.numLike + 1])
-    
+ 

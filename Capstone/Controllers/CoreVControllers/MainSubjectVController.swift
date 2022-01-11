@@ -36,8 +36,9 @@ class MainSubjectVController: UIViewController {
         collectionView.dataSource = self
         
         self.mainTable.rowHeight = UITableView.automaticDimension;
+        if   ((Auth.auth().currentUser) != nil) {
         mainCollectionRef = Firestore.firestore().collection("mainSubjects")
-    
+        }
         // Do any additional setup after loading the view.
     }
     

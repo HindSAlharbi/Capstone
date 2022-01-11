@@ -32,13 +32,21 @@ class UserPostVController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
 
         ideaTable.delegate = self
         ideaTable.dataSource = self
         ideaTable.estimatedRowHeight = 80
         ideaTable.rowHeight = UITableView.automaticDimension
+        if   ((Auth.auth().currentUser) != nil) {
         thoughtCollectionRef = Firestore.firestore().collection("thoughts")
+    }
+    }
+    
+    
+    @IBAction func addThought(_ sender: Any) {
+     performSegue(withIdentifier: "add", sender: nil)
     }
     
     //MARK: load  data to firebase
@@ -46,24 +54,17 @@ class UserPostVController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if user == nil {
-//               self.performSegue(withIdentifier: "loginHome", sender: nil)
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let loginVC = storyboard.instantiateViewController(withIdentifier: Constants.logOut)
-//                self.present(loginVC, animated: true, completion: nil)
             } else {
                 self.setListener()
             }
         })
     }
-    
-    
-    
-
-    
     override func viewWillDisappear(_ animated: Bool) {
         if thoughtListener != nil {
-          thoughtListener.remove()    }
+          thoughtListener.remove()
+        }
     }
+
     @IBAction func categoryChange(_ sender: Any) {
         
         switch segmentC.selectedSegmentIndex{
@@ -93,10 +94,23 @@ class UserPostVController: UIViewController {
                         self.ideaTable.reloadData()
                     }
             }
-        }
+        } else {
+            thoughtListener = thoughtCollectionRef
+        .whereField("category", isEqualTo: selectedCategory)
+        .order(by: "timestamp", descending: true)
+        .addSnapshotListener { (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching docs: \(err)")
+            } else {
+                self.thuoghts.removeAll()
+                self.thuoghts = Thought.parseData(snapshot: snapshot)
+                self.ideaTable.reloadData()
+            }
     }
-     
 }
+}
+}
+
 //MARK: exrension for Post tableView
 
 extension UserPostVController: UITableViewDelegate, UITableViewDataSource{
@@ -116,18 +130,6 @@ extension UserPostVController: UITableViewDelegate, UITableViewDataSource{
 
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "toComments", sender: thuoghts[indexPath.row])
-//    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toComments"{
-//            if let destinationVC = segue.destination as? CommentsVController{
-//                if let thought = sender as? Thought{
-//                    destinationVC.thought = thought
-//                }
-//            }
-//        }
-//    }
 }
 
 
@@ -140,28 +142,4 @@ extension UserPostVController: UITableViewDelegate, UITableViewDataSource{
 
 
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        thoughtListener = thoughtCollectionRef.addSnapshotListener { snapshot, error in
-//            if let err = error{
-//               debugPrint("Error fetching docs:\(err)")
-//            }else {
-//                self.thuoghts.removeAll()
-//                guard let snap = snapshot else {return}
-//                for document in snap.documents{
-//                    let data = document.data()
-//                    let category = data ["category"] as? String ?? ""
-//                    let userN = data["userN"] as? String ?? "Anonymous"
-//                    let TxtThought = data["TxtThought"] as? String ?? ""
-//                    let timestamp = data ["timestamp"] as? Date ?? Date()
-//                    let numComments = data["numComments"] as? Int  ?? 0
-//                    let documentId = document.documentID
-//                    let numLikes  = data["numLikes"] as? Int ?? 0
-//                    let newthought = Thought(userN: userN, TxtThought: TxtThought, numLikes: numLikes, numComments: numComments, timestamp: timestamp, documentId: documentId)
-//                    self.thuoghts.append(newthought)
-//                }
-//                self.ideaTable.reloadData()
-//            }
-//
-//        }
-//
-//        }
+ 
