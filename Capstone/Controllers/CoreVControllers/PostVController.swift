@@ -20,7 +20,7 @@ class PostVController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var postBtnn: UIButton!
     
     // Variables
-    private var selectedCategory = ThoughtCategory.general.rawValue
+    private var selectedCategory = ThoughtCategory.popular.rawValue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class PostVController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
         postBtnn.layer.cornerRadius = 4
         thoughtTxt.layer.cornerRadius = 4
-        thoughtTxt.text = "My suggestion..."
+        thoughtTxt.text = "My suggestion...".locatized
         thoughtTxt.textColor = UIColor.lightGray
         thoughtTxt.delegate = self
         
@@ -44,29 +44,28 @@ class PostVController: UIViewController, UITextViewDelegate {
         textView.text = ""
         textView.textColor = UIColor.darkGray
     }
-
     @IBAction func categoryChange(_ sender: Any) {
-        
+        if ((Auth.auth().currentUser?.uid) != nil) {
         switch categorySegment.selectedSegmentIndex{
         case 0:
-            selectedCategory = ThoughtCategory.general.rawValue
+            selectedCategory = ThoughtCategory.popular.rawValue
         case 1:
-            selectedCategory = ThoughtCategory.university.rawValue
-        default:
             selectedCategory = ThoughtCategory.safeer.rawValue
+        case 2:
+            selectedCategory = ThoughtCategory.laws.rawValue
+        default:
+            selectedCategory = ThoughtCategory.forSell.rawValue
         }
-        
-
     }
-   
+    }
     //MARK: load table data to firebase
 
     @IBAction func postBtnTapped(_ sender: Any) {
-        if (Auth.auth().currentUser != nil){
+        if (Auth.auth().currentUser?.uid != nil){
             
         guard let userN = userNameTxt.text else{return}
         
-        Firestore.firestore().collection("thoughts").addDocument(data: [
+            Firestore.firestore().collection(Constants.thoughts).addDocument(data: [
            
             "userN": userN,
             "TxtThought": thoughtTxt.text!,
@@ -82,21 +81,6 @@ class PostVController: UIViewController, UITextViewDelegate {
             }
         }
     }
+  }
 }
 
-}
-
-
-
-
-
-
-
-
-//FieldValue.serverTimestamp()
-
-
-//"category": selectedCategory
-//"numComments": 0
-//"numLikes": 0
-//"timestamp": FieldValue.serverTimestamp()

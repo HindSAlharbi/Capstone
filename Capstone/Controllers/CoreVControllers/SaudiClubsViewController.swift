@@ -13,11 +13,12 @@ class SaudiClubsViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var webView: WKWebView!
-    
+    // Variables
+    var rowSelected : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      let url = URL(string: "http://sacmclubs.org")
+        let url = URL(string: Constants.url)
        let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)
            
@@ -26,6 +27,4 @@ class SaudiClubsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         webView.frame = view.bounds
     }
-
-    
 }

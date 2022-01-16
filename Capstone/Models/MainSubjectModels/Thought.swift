@@ -8,8 +8,9 @@
 import Foundation
 import Firebase
 
-class Thought : Decodable{
+class Thought{
     
+    // Variables
     private(set) var userN: String!
     private(set) var TxtThought: String!
     private(set) var numLikes: Int!
@@ -36,17 +37,16 @@ class func parseData(snapshot: QuerySnapshot?) -> [Thought] {
         let data = document.data()
         
         let userN = data["userN"] as? String ?? "Anonymous"
-        let timestamp = data["timestamp"] as? Date ?? Date()
         let TxtThought = data["TxtThought"] as? String ?? ""
         let numLikes = data["numLikes"] as? Int ?? 0
         let numComments = data["numComments"] as? Int ?? 0
         let documentId = document.documentID
+        let savedDate = data ["timestamp"] as? Timestamp ?? Timestamp(date: Date())
+        let timestamp = savedDate.dateValue()
         
        
         let newThought = Thought(userN: userN, TxtThought: TxtThought, numLikes: numLikes, numComments: numComments, timestamp: timestamp, documentId: documentId)
         thoughts.append(newThought)
-       
-        
     }
     
     return thoughts

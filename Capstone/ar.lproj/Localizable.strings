@@ -5,3 +5,97 @@
   Created by Hind Alharbi on 1/10/22.
   
 */
+
+
+"How to Rent an Apartment When You Are an International Student?" = "كيف تستأجر شقة وأنت طالب دولي؟";
+"Bank Account" = "الحساب المصرفي";
+"List of emergency telephone numbers" = "قائمة أرقام هواتف الطوارئ";
+"Student Guide" = "دليل الطالب";
+"Student Guide" = "دليل الطالب";
+"If you want to change the language, go to setting." = "إذا كنت ترغب في تغيير اللغة ، انتقل إلى الإعداد.";
+"Cancel" = "إلغاء";
+"Setting" = "الإعداد";
+"Student guide is your best Friend!" = "دليل الطالب هو أفضل صديق لك!";
+"Just Start!" = "فقط ابدا!";
+"you have to start to be great!" = "عليك أن تبدأ لتكون رائعًا!";
+"Create your futur with us!" = "اصنع مستقبلك معنا!";
+"If opportunity doesn’t knock, build a door!" = "إذا لم تدق الفرصة ، ابني الباب!";
+"My suggestion..." = "اقتراحي...";
+"Pleas fill all the fileds." = "الرجاء تعبئة جميع الحقول.";
+"Error" = "خطأ";
+
+"There are a few things you should have.\n 1. you have to provide physical mailing address. \n 2. A valid Passport and Visa.\n 3. American Phpne number.
+ 4. Aminium opening deposit $25 to activiate your account.
+****************************************************
+US Banks that I have tried are:
+ 1. American bank.
+ 2. Chase bank.
+****************************************************" = "
+      هناك بعض الأشياء التي يجب أن تمتلكهاهناك قبل الذهاب للبنك:
+      ١. يجب عليك تقديم عنوان بريدي فعلي.
+      ٢. جواز سفر وتأشيرة صالحه .
+      ٣. رقم جوال أمريكي.
+       ٤. إيداع 25$ لفتح حساب أمينيوم لتفعيل حسابك.
+******************************************************
+            البنوك الأمريكية اللي جربتها هي:
+             1. البنك الأمريكي.
+             2. بنك تشيس.
+******************************************************";
+
+"Stay safe and happy moving!.
+1. How to know this is a Safe Neighborhood or not:
+   To help you out, we’ve included the fourth best places to find important information on safety and crime in your new neighborhood.
+   AreaVibes, National Sex Offender Public Website, Moving.com’s City Profile Reports, CrimeReports.
+    ******************************************
+2.Apps & website to search:
+  - Zillow , Apartements.com , ForRent.com, Hotpads, Trulia & realtor.com
+   *********************************************
+3.Doucments you need:
+  - password, I-20, income proof & applaction fees.
+********************************************
+4. Remember to read the contract very carefully and you may pay deposit equal to one month or more." = "
+ابق آمنًا وسعيدًا يتحرك !.
+1. كيف تعرف أن هذا الحي آمن أم لا:
+    لمساعدتك ، قمنا بتضمين رابع أفضل الأماكن للعثور على معلومات مهمة حول السلامة والجريمة في منطقتك الجديدة.
+    AreaVibes ، موقع National Sex Offender Public Website ، Moving.com's City Profile Reports ، CrimeReports.
+     ********************************************
+2- التطبيقات والموقع الإلكتروني للبحث:
+   - Zillow و Apartements.com و ForRent.com و Hotpads و Trulia و realtor.com
+    ***********************************************
+3.أزواج تحتاجها:
+   - كلمة المرور ، I-20 ، إثبات الدخل ورسوم التطبيق.
+**********************************************
+4. تذكر أن تقرأ العقد بعناية شديدة ، وقد تدفع وديعة تعادل شهرًا واحدًا أو أكثر.
+";
+"Important contact number you have to know:
+1. 911 .It's universal across the entire US (and Canada since both countries use the same telephone switching system).
+******************************************
+2. Embassy of the Kingdom of Saudi Arabia:
+    Phone: 202-342-3800
+    Fax:   202-295-3625
+    Saudisusemb@mofa.gov.sa
+    usnycon@mofa.gov.sa
+3. Consulate General of Saudi Arabia in Houston:
+    Phone: 713-785-5577
+    Fax:   713-273-6937
+    ustxcon@mofa.gov.sa
+4.  Royal Embassy of Saudi Arabia:
+    Phone: 202-342-3800
+    Fax:   202-295-3625" = "
+رقم اتصال مهم يجب أن تعرفه:
+                                                  911.- 1
+ إنه عالمي في جميع أنحاء الولايات المتحدة (وكندا لأن كلا البلدين يستخدمان نفس نظام تبديل الهاتف).
+********************************************
+2 - سفارة المملكة العربية السعودية:
+      هاتف: 202-342-3800
+      فاكس: 3625-295-202
+Saudisusemb@mofa.gov.sa
+usnycon@mofa.gov.sa
+3. القنصلية العامة للمملكة العربية السعودية في هيوستن:
+      الهاتف: 713-785-5577
+      رقم الفاكس: 6937-273-713
+ustxcon@mofa.gov.sa
+4. السفارة الملكية للمملكة العربية السعودية:
+      هاتف: 202-342-3800
+      فاكس: 3625-295-202
+";

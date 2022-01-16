@@ -12,10 +12,10 @@ import UIKit
 
 class UserApi {
     
-    static func addUser(uid:String,email:String,firstName:String,lastName: String, dataCreated: Data, completion: @escaping (Bool) -> Void) {
+    static func addUser(uid:String,email:String,firstName:String,lastName: String ,dataCreated: Data, completion: @escaping (Bool) -> Void) {
         
         let refUsers = Firestore.firestore().collection("Users")
-        refUsers.document(uid).setData(User.CreateUser(email: email, firstName: firstName, lastName: lastName))
+        refUsers.document(uid).setData(User.CreateUser(email: email, firstName: firstName, lastName: lastName, dataCreated: dataCreated))
         
         completion(true)
     }
@@ -36,8 +36,8 @@ class UserApi {
             last = lastName
         }
         let refUsers = Firestore.firestore().collection("Users")
-        refUsers.document(uid).setData(User.update( firstName: first, lastName: last),merge: true)
-            
+        refUsers.document(uid).setData(User.update( firstName: first, lastName: last), merge: true)
+    
         }
     static func getUser(uid:String,completion: @escaping (User) -> Void) {
 
