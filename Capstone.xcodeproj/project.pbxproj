@@ -192,9 +192,9 @@
 		7560A8EB2761E4040085CD00 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				75F01BF2277D911200215F8D /* CustomsCells */,
 				75954AC52761F0D5009158F3 /* UserPageVC */,
 				7571639127799745008E8B39 /* VControllers */,
+				75F01BF2277D911200215F8D /* CustomsCells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +213,7 @@
 			children = (
 				7560A8D02760A2890085CD00 /* Main.storyboard */,
 				7560A8D52760A28D0085CD00 /* LaunchScreen.storyboard */,
+				758EC4C2276F18A0004CDF76 /* CellTableViewCell.xib */,
 				7560A8D32760A28D0085CD00 /* Assets.xcassets */,
 			);
 			path = View;
@@ -263,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				758EC4C1276F18A0004CDF76 /* MainSubjectsTableViewCell.swift */,
-				758EC4C2276F18A0004CDF76 /* CellTableViewCell.xib */,
 			);
 			path = MainTableViewCell;
 			sourceTree = "<group>";
