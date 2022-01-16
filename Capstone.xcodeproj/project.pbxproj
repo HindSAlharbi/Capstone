@@ -12,6 +12,7 @@
 		751EC88C276736E300103DD8 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EC88B276736E300103DD8 /* UserApi.swift */; };
 		752A771B2769E0EB00F9B500 /* SubjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A771A2769E0EB00F9B500 /* SubjectList.swift */; };
 		752A771D2769E2BD00F9B500 /* MainSubjectsVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A771C2769E2BD00F9B500 /* MainSubjectsVController.swift */; };
+		7534C47C279458E000209CA2 /* thoughtCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534C47B279458E000209CA2 /* thoughtCategory.swift */; };
 		753F0FD327937A780057987E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753F0FD227937A780057987E /* String.swift */; };
 		7546CEC8278F3CFA008AEB6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7546CECA278F3CFA008AEB6E /* Localizable.strings */; };
 		755BE0F92787133900FEE714 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 755BE0F82787133900FEE714 /* SwiftMessages */; };
@@ -48,6 +49,7 @@
 		751EC88B276736E300103DD8 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		752A771A2769E0EB00F9B500 /* SubjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectList.swift; sourceTree = "<group>"; };
 		752A771C2769E2BD00F9B500 /* MainSubjectsVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSubjectsVController.swift; sourceTree = "<group>"; };
+		7534C47B279458E000209CA2 /* thoughtCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thoughtCategory.swift; sourceTree = "<group>"; };
 		753F0FD227937A780057987E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7546CECB278F3D00008AEB6E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7546CECC278F3D19008AEB6E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 				754874DB27889E7C00CA96A1 /* UserModels */,
 				752A771E2769E2FD00F9B500 /* MainSubjectModels */,
 				7546CEBE278F3AC7008AEB6E /* Constant */,
-				753F0FD227937A780057987E /* String.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +134,7 @@
 			children = (
 				752A771A2769E0EB00F9B500 /* SubjectList.swift */,
 				755BE0FE27874E8100FEE714 /* Thought.swift */,
+				7534C47B279458E000209CA2 /* thoughtCategory.swift */,
 			);
 			path = MainSubjectModels;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				75954ACF27660BC6009158F3 /* Constants.swift */,
+				753F0FD227937A780057987E /* String.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -179,7 +182,6 @@
 				7560A8EF2761E46F0085CD00 /* View */,
 				7560A8EB2761E4040085CD00 /* Controllers */,
 				7560A8EE2761E44F0085CD00 /* Resource */,
-				7560A8D32760A28D0085CD00 /* Assets.xcassets */,
 				7560A8D82760A28D0085CD00 /* Info.plist */,
 				75954AC927622161009158F3 /* GoogleService-Info.plist */,
 				7546CECA278F3CFA008AEB6E /* Localizable.strings */,
@@ -190,8 +192,9 @@
 		7560A8EB2761E4040085CD00 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				75F01BF2277D911200215F8D /* CustomsCells */,
 				75954AC52761F0D5009158F3 /* UserPageVC */,
-				7571639127799745008E8B39 /* CoreVControllers */,
+				7571639127799745008E8B39 /* VControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,14 +211,14 @@
 		7560A8EF2761E46F0085CD00 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				75F01BF2277D911200215F8D /* CustomsCells */,
 				7560A8D02760A2890085CD00 /* Main.storyboard */,
 				7560A8D52760A28D0085CD00 /* LaunchScreen.storyboard */,
+				7560A8D32760A28D0085CD00 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		7571639127799745008E8B39 /* CoreVControllers */ = {
+		7571639127799745008E8B39 /* VControllers */ = {
 			isa = PBXGroup;
 			children = (
 				752A771C2769E2BD00F9B500 /* MainSubjectsVController.swift */,
@@ -224,7 +227,7 @@
 				7560A8CE2760A2890085CD00 /* PostVController.swift */,
 				755BE0FA278724BC00FEE714 /* UserPostVController.swift */,
 			);
-			path = CoreVControllers;
+			path = VControllers;
 			sourceTree = "<group>";
 		};
 		758EC4C0276B662F004CDF76 /* Frameworks */ = {
@@ -402,6 +405,7 @@
 				755BE0FD2787273800FEE714 /* UsersPostTableViewCell.swift in Sources */,
 				752A771B2769E0EB00F9B500 /* SubjectList.swift in Sources */,
 				75954ACC27623740009158F3 /* LogInVController.swift in Sources */,
+				7534C47C279458E000209CA2 /* thoughtCategory.swift in Sources */,
 				75EC871727819FD9006FADCF /* SaudiClubsViewController.swift in Sources */,
 				7560A8ED2761E43D0085CD00 /* SignUpVController.swift in Sources */,
 				7560A8CF2760A2890085CD00 /* PostVController.swift in Sources */,

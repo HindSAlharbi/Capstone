@@ -21,11 +21,9 @@ class MainSubjectsVController: UIViewController {
     var mainSubjects = [SubjectList]()
     private var mainCollectionRef: CollectionReference!
     private var mainListener: ListenerRegistration!
-    
     var collectionImage:NSArray = []
     var collectionLabel: NSArray = []
     var mainTableImage:NSArray = []
-    
     var TitleLabel: String!
     var ImageTitle: UIImage!
     var subtitleLabel: String!
@@ -49,7 +47,7 @@ class MainSubjectsVController: UIViewController {
         self.mainTable.rowHeight = UITableView.automaticDimension;
         
        if ((Auth.auth().currentUser) != nil) {
-        mainCollectionRef = Firestore.firestore().collection("mainSubjects")
+           mainCollectionRef = Firestore.firestore().collection("mainSubjects".locatized)
         }
     }
     func startTimer(){
@@ -67,6 +65,7 @@ class MainSubjectsVController: UIViewController {
     func tableImage(){
         mainTableImage = [UIImage(named: "house")!,UIImage(named: "bank")!, UIImage(named: "saudiClub")!,UIImage(named: "contact")!]
     }
+    
     // func for Collection Image
     func ImageCollection(){
         collectionImage = [UIImage(named:"15")!,UIImage(named: "16")!,UIImage(named:"17")!,UIImage(named:"18")!,UIImage(named:"19")!]
@@ -112,7 +111,6 @@ class MainSubjectsVController: UIViewController {
         }
 }
 // MARK: Tableview delegate and datasource
-
 extension MainSubjectsVController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

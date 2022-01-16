@@ -3,7 +3,7 @@
 "0ru-tZ-Ayp.text" = "Jun 7, 1:35";
 
 /* Class = "UILabel"; text = "99"; ObjectID = "3GO-ne-g1c"; */
-"3GO-ne-g1c.text" = "99";
+"3GO-ne-g1c.text" = "٩٩";
 
 /* Class = "UILabel"; text = "This is my idea..."; ObjectID = "4FM-8F-j5q"; */
 "4FM-8F-j5q.text" = "هذا فكرتي...";
@@ -15,7 +15,7 @@
 "6NN-T2-yAr.text" = "الاسم الاول:";
 
 /* Class = "UIButton"; configuration.title = "Register"; ObjectID = "7om-I7-iQB"; */
-"7om-I7-iQB.configuration.title" = "تسجيل";
+"7om-I7-iQB.configuration.title" = "تسجيل جديد";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7om-I7-iQB"; */
 "7om-I7-iQB.normalTitle" = "Button";
@@ -57,7 +57,7 @@
 "Q6a-2b-LxR.title" = "الصفحه الرئيسيه";
 
 /* Class = "UIButton"; configuration.title = "Register"; ObjectID = "Qhy-9t-Qya"; */
-"Qhy-9t-Qya.configuration.title" = "تسجيل";
+"Qhy-9t-Qya.configuration.title" = "تسجيل جديد";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Qhy-9t-Qya"; */
 "Qhy-9t-Qya.normalTitle" = "Button";
@@ -138,7 +138,7 @@
 "fch-me-CE8.title" = "مدونه";
 /* Class = "UIButton"; configuration.title = "Log in"; ObjectID = "mwy-v1-I4v"; */
 "mwy-v1-I4v.configuration.title" = "تسجيل الدخول";
-"ttS-3b-Wmy.configuration.title" = "تسجيل";
+"ttS-3b-Wmy.configuration.title" = "تسجيل جديد";
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mwy-v1-I4v"; */
 "mwy-v1-I4v.normalTitle" = "Button";
 
@@ -162,7 +162,7 @@
 "ryH-yH-2QM.text" = "Share information";
 
 /* Class = "UITextField"; placeholder = "UserName..."; ObjectID = "tBP-Nz-Shh"; */
-"tBP-Nz-Shh.placeholder" = "UserName...";
+"tBP-Nz-Shh.placeholder" = "اسمك او عنوان";
 
 /* Class = "UIBarButtonItem"; title = "Log Out"; ObjectID = "tb8-cx-cXC"; */
 "tb8-cx-cXC.title" = "تسجيل خروج";
@@ -184,3 +184,4 @@
 
 /* Class = "UILabel"; text = "HindS"; ObjectID = "wcW-Nk-Lyv"; */
 "wcW-Nk-Lyv.text" = "HindS";
+"MsT-Hg-TOF.headerTitle" = "الإعدادات:";

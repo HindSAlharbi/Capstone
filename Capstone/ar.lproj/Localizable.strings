@@ -6,7 +6,10 @@
   
 */
 
-
+"mainSubjects" = "mainSubjectsAR";
+"If you want to change the language go to the setting." = "إذا كنت ترغب في تغيير اللغة ، انتقل إلى الإعداد.";
+"Cancel" = "إلغاء";
+"Settings" = "الاعدادات";
 "How to Rent an Apartment When You Are an International Student?" = "كيف تستأجر شقة وأنت طالب دولي؟";
 "Bank Account" = "الحساب المصرفي";
 "List of emergency telephone numbers" = "قائمة أرقام هواتف الطوارئ";
@@ -38,8 +41,8 @@ US Banks that I have tried are:
        ٤. إيداع 25$ لفتح حساب أمينيوم لتفعيل حسابك.
 ******************************************************
             البنوك الأمريكية اللي جربتها هي:
-             1. البنك الأمريكي.
-             2. بنك تشيس.
+             ١. البنك الأمريكي.
+             ٢. بنك تشيس.
 ******************************************************";
 
 "Stay safe and happy moving!.

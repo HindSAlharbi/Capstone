@@ -75,7 +75,7 @@ class ProfileVController: UITableViewController{
     @IBAction func languageBtn(_ sender: Any) {
         let alert = UIAlertController(title: "If you want to change the language go to the setting.".locatized, message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel".locatized, style: .destructive, handler: nil))
-        let settings = UIAlertAction(title: "Setting".locatized, style: .default, handler: { (action) -> Void in
+        let settings = UIAlertAction(title: "Settings".locatized, style: .default, handler: { (action) -> Void in
             UIApplication.shared.open(URL(string: "App-Prefs:root=GENERAL")!, options: [:], completionHandler: nil)
         })
         alert.addAction(settings)

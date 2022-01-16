@@ -22,7 +22,7 @@ class SaudiClubsViewController: UIViewController {
        let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)
            
-        print(url)
+        print(url ?? "")
     }
     override func viewDidLayoutSubviews() {
         webView.frame = view.bounds

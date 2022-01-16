@@ -109,13 +109,7 @@ extension UserPostVController: UITableViewDelegate, UITableViewDataSource{
         }
     }
 }
-// enum segment category
-enum ThoughtCategory: String {
-    case popular = "Popular"
-    case safeer = "safeer"
-    case laws = "laws"
-    case forSell = "forSell"
-}
+
 
 
 
