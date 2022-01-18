@@ -5,6 +5,9 @@
  # Description:
 I am designing a guide app (IOS) for international students. Guide App will help students to make their journey marble. So that, the App covers essential topics such as living and studying in the USA. Also, it have a blog page that allowed users to add any topics he/she wants.
 
+# Define the scenes:
+https://www.figma.com/file/IfqTtFZPOhr5HTEmfxZQ7g/Untitled?node-id=0%3A1
+
 **************************************************************************************************************
 
  # User Stories:
