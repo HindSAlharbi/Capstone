@@ -12,5 +12,5 @@ enum ThoughtCategory: String {
     case popular = "Popular"
     case safeer = "safeer"
     case laws = "laws"
-    case forSell = "forSell"
+    case forsale = "forsale"
 }

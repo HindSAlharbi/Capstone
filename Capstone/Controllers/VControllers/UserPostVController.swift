@@ -55,11 +55,11 @@ class UserPostVController: UIViewController {
         case 0:
             selectedCategory = ThoughtCategory.popular.rawValue
         case 1:
-            selectedCategory = ThoughtCategory.safeer.rawValue
-        case 2:
             selectedCategory = ThoughtCategory.laws.rawValue
+        case 2:
+            selectedCategory = ThoughtCategory.forsale.rawValue
         default:
-            selectedCategory = ThoughtCategory.forSell.rawValue
+            selectedCategory = ThoughtCategory.safeer.rawValue
         }
         thoughtListener.remove()
         setListener()

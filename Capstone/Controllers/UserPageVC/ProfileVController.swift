@@ -13,7 +13,7 @@ import FirebaseStorage
 
 class ProfileVController: UITableViewController{
    
-    //Outlets
+    //MARK:- Outlets
     @IBOutlet weak var emailtextfiled: UITextField!
     @IBOutlet weak var firstNameProfile: UITextField!
     @IBOutlet weak var lastNameProfile: UITextField!
@@ -21,7 +21,7 @@ class ProfileVController: UITableViewController{
     @IBOutlet weak var tapToCahnePhoto:
     UIButton!
     
-    // Variables
+    //MARK:- Variables
     var user: User?
 
     override func viewDidLoad() {
@@ -63,12 +63,14 @@ class ProfileVController: UITableViewController{
     
     @IBAction func lightDarkMoodBtn(_ sender: Any) {
         if #available(iOS 15.0, *){
-            let appDelegate = UIApplication.shared.windows.first
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            let window = windowScene?.windows.first
             if (sender as AnyObject).isOn {
-                appDelegate?.overrideUserInterfaceStyle = .dark
+                window?.overrideUserInterfaceStyle = .dark
                 return
             }
-            appDelegate?.overrideUserInterfaceStyle = .light
+            window?.overrideUserInterfaceStyle = .light
             return
         }
     }

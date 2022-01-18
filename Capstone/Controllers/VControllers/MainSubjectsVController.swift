@@ -65,7 +65,7 @@ class MainSubjectsVController: UIViewController {
     func tableImage(){
         mainTableImage = [UIImage(named: "house")!,UIImage(named: "bank")!, UIImage(named: "saudiClub")!,UIImage(named: "contact")!]
     }
-    
+
     // func for Collection Image
     func ImageCollection(){
         collectionImage = [UIImage(named:"15")!,UIImage(named: "16")!,UIImage(named:"17")!,UIImage(named:"18")!,UIImage(named:"19")!]
@@ -142,7 +142,7 @@ extension MainSubjectsVController: UITableViewDelegate, UITableViewDataSource{
             performSegue(withIdentifier: Constants.secondPage, sender: nil)
         case 2:
             if indexPath.row == 2 {
-                performSegue(withIdentifier: Constants.clubs, sender: nil)
+            performSegue(withIdentifier: Constants.clubs, sender: nil)
             }
         case 3:
             TitleLabel = Constants.contact

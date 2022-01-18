@@ -15,8 +15,6 @@ class User {
     var firstName: String?
     var lastName: String?
     var dataCreated: Data!
-    //var proImage: UIImage?
-    
 }
 extension User {
     
@@ -29,8 +27,6 @@ extension User {
         user.firstName = dict["firstName"] as? String
         user.lastName = dict["lastName"] as? String
         user.dataCreated = dict["dataCreated"] as? Data ?? Data()
-        //user.proImage = dict["proImage"] as? UIImage
-
         return user
     }
     static func CreateUser(email:String,firstName: String, lastName: String, dataCreated: Data ) -> [String: Any] {

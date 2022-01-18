@@ -17,7 +17,6 @@ class SaudiClubsViewController: UIViewController {
     var rowSelected : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         let url = URL(string: Constants.url)
        let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)

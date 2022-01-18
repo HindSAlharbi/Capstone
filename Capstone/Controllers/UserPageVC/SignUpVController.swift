@@ -26,12 +26,12 @@ class SignUpVController: UIViewController {
         super.viewDidLoad()
        
         textlabel()
-        regBtn.layer.cornerRadius = 5
+        regBtn.layer.cornerRadius = 10
     }
     func signUP(){
-        if let email = emailTextFiled.text ,  let password = passwordTextFiled.text, let username = firstNameTextField.text {
+        if let email = emailTextFiled.text ,  let password = passwordTextFiled.text, let first = firstNameTextField.text{
             Auth.auth().createUser(withEmail: email, password: password)  { authResult, error in
-                        guard let user = authResult?.user, error == nil else {
+                guard let uses = authResult?.user, error == nil else {
                             print("email:\(String(describing: authResult?.user.email))")
                             print("uid:\(String(describing: authResult?.user.uid))")
                             return

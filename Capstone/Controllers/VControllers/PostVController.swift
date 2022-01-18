@@ -42,7 +42,7 @@ class PostVController: UIViewController, UITextViewDelegate {
 
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
-        textView.textColor = UIColor.darkGray
+        textView.textColor = UIColor.black
     }
     @IBAction func categoryChange(_ sender: Any) {
         if ((Auth.auth().currentUser?.uid) != nil) {
@@ -50,16 +50,16 @@ class PostVController: UIViewController, UITextViewDelegate {
         case 0:
             selectedCategory = ThoughtCategory.popular.rawValue
         case 1:
-            selectedCategory = ThoughtCategory.safeer.rawValue
-        case 2:
             selectedCategory = ThoughtCategory.laws.rawValue
+        case 2:
+            selectedCategory = ThoughtCategory.forsale.rawValue
         default:
-            selectedCategory = ThoughtCategory.forSell.rawValue
+            selectedCategory = ThoughtCategory.safeer.rawValue
         }
     }
     }
+    
     //MARK: load table data to firebase
-
     @IBAction func postBtnTapped(_ sender: Any) {
         if (Auth.auth().currentUser?.uid != nil){
             

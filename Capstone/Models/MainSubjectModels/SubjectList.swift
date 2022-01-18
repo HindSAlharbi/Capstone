@@ -54,18 +54,3 @@ private(set) var documentId: String!
         return mainSubjects
     }
 }
-
-struct SecondVCDetiels {
-    var title: String
-    var imageDetiels: UIImage
-    var subTitle: String
-    var titleDetiels: String
-}
-
-//struct SubjectList{
-//
-//let subjectTitle: String!
-//let maintimestamp: Date!
-//let numComment:Int!
-//let numLike:Int!
-//}
