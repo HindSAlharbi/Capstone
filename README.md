@@ -3,36 +3,67 @@
 **************************************************************************************************************
 
  # Description:
+<<<<<<< HEAD
  I am designing a guide app (IOS) for international students. Guide App will help students to make their journey marble. So that, the App covers essential topics such as living and studying in the USA. Also, it have a blog page that allowed users to add any topics he/she wants.
+=======
+I am designing a guide app (IOS) for international students. Guide App will help students to make their journey marble. So that, the App covers essential topics such as living and studying in the USA. Also, it have a blog page that allowed users to add any topics he/she wants.
+
+# Define the scenes:
+https://www.figma.com/file/IfqTtFZPOhr5HTEmfxZQ7g/Untitled?node-id=0%3A1
+>>>>>>> e1075e23ca9e8d41dc5b2b0ba401dc7d7765e181
 
 **************************************************************************************************************
 
  # User Stories:
 
+<<<<<<< HEAD
 - Signup: As an anon I can sign up in the App so that I can use the platform.
 - Login: As a user I have to log in to use the the app so that I can explore it.
+=======
+- Signup: As an anon I can sign up in the App so that I can use the platform. 
+- Login: As a user I have to  log in to use the the app so that I can explore it.
+>>>>>>> e1075e23ca9e8d41dc5b2b0ba401dc7d7765e181
 - Logout: As a user I can logout from the platform so no one else can use it.
 - Add likes: As a user I can rate an exit subject so that others can see it as popular.
 - Blog page: As a user I can add important topics to the app, so that others can see it and like it.
 - Explore the Exit subjects: As a user I can explore the important subject for international student in USA.
 - Updata profile information: As a use I can upata my information if I want.
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1075e23ca9e8d41dc5b2b0ba401dc7d7765e181
 **************************************************************************************************************
  
 # User profile:
 
 - see my profile.
+<<<<<<< HEAD
 - see exit point.
 - Like exit subject.
 - Add new subject to blog page.
+=======
+-  see exit point.
+-  Like exit subject.
+-  Add new subject to blog page.
+>>>>>>> e1075e23ca9e8d41dc5b2b0ba401dc7d7765e181
 - updata profile information
 
 **************************************************************************************************************
 # Pages:
 
+<<<<<<< HEAD
 - Login Page
 - Signup Page
 - Profile Page
 - Edit Profile Page
 - Blog page
 - Explore Exite Subject Page
+=======
+- LoginPage
+- SignupPage
+- ProfilePage
+- EditProfilePage
+- Blog page
+- ExploreExiteSubjectPage
+>>>>>>> e1075e23ca9e8d41dc5b2b0ba401dc7d7765e181
 **************************************************************************************************************
